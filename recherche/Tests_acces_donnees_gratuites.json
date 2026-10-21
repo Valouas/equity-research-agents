@@ -1,0 +1,1412 @@
+{
+  "generated_at_utc": "2026-10-06T17:24:58.089757+00:00",
+  "scope": "Catalogue de recherche et observations d’accès. Aucun scan mondial exhaustif validé ; aucun nouveau collecteur gratuit intégré au bot par cette recherche.",
+  "interpretation": "HTTP 200 ≠ données financières utilisables. Distinguer documents techniques, métadonnées, faits bruts et validation métier. Les codes et heures non observés ne sont pas inventés.",
+  "summary": {
+    "source_and_tool_cards": 46,
+    "priority_counts": {
+      "A": 12,
+      "B": 23,
+      "C": 11
+    },
+    "evidence_counts": {
+      "needs_account_validation": 9,
+      "live_tested": 7,
+      "documentation_verified": 30
+    },
+    "source_url_rows": 158,
+    "unique_source_urls": 156,
+    "test_observations": 14,
+    "http_200_count": 10,
+    "http_429_count": 1,
+    "http_status_unexposed_count": 3,
+    "returned_data_or_metadata_count": 9,
+    "document_only_count": 1,
+    "no_data_observations_count": 4,
+    "new_collectors_integrated_into_existing_bot": 0
+  },
+  "input_manifests": [
+    {
+      "filename": "official_us_macro_tests.json",
+      "sha256": "3255155016eb8531eaa511962e4a0c0832c873b420baffd104c188efc18d7d47",
+      "observations": 4
+    },
+    {
+      "filename": "regulators_tests.json",
+      "sha256": "82b7aa6da1599e34eb7d65e92ebf4f5b0019e8780c9c0e73c67aaa86d3d2a2ab",
+      "observations": 5
+    },
+    {
+      "filename": "root_tests.json",
+      "sha256": "2b3f743cef22f3ffaf72da38a3625c4da932b57af0f6d92b935874aa670b82dc",
+      "observations": 1
+    },
+    {
+      "filename": "market_tests.json",
+      "sha256": "136cb4eab226501177839e846ae15c8ddea0e861116f6a27831247ca09d4dc80",
+      "observations": 3
+    },
+    {
+      "filename": "market_quote_tests.json",
+      "sha256": "4a3e0a71ac8b7a9924d7bd728e7e7dff4c050de668d3d1d39db2cff57ed9f75f",
+      "observations": 1
+    }
+  ],
+  "original_evidence_batches": {
+    "official_us_macro_tests.json": {
+      "timestamp": "2026-10-06T17:08:47.384293+00:00",
+      "method": "4 requêtes HTTPS documentées, séquentielles, sans clé/compte. Limiteur à environ 1,5 requête/seconde ; aucune nouvelle tentative ni contournement. Le User-Agent est transparent et ne contient pas de faux contact.",
+      "user_agent": "StockResearchBot/0.1 (public-data evaluation; no contact address configured)",
+      "endpoint_count": 4,
+      "successful_http_200": 4,
+      "results": [
+        {
+          "name": "sec_companyfacts_apple",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+          "status": 200,
+          "content_type": "application/json",
+          "bytes": 3789099,
+          "server_date": "Tue, 06 Oct 2026 17:08:55 GMT",
+          "elapsed_seconds": 8.694,
+          "observations": {
+            "company": "Apple Inc.",
+            "tags": {
+              "dei": 2,
+              "us-gaap": 503
+            },
+            "annual_example": {
+              "period_start": "2024-09-29",
+              "period_end": "2025-09-27",
+              "filing_date": "2025-10-31",
+              "accession": "0000320193-25-000079",
+              "revenue_USD": 416161000000,
+              "net_income_USD": 112010000000
+            },
+            "shares_distinct_measures": [
+              {
+                "tag": "us-gaap:CommonStockSharesOutstanding",
+                "instant_date": "2025-09-27",
+                "shares": 14773260000,
+                "meaning": "Actions à la fin de cet exercice, contexte et classe à vérifier pour chaque émetteur."
+              },
+              {
+                "tag": "dei:EntityCommonStockSharesOutstanding",
+                "instant_date": "2025-10-17",
+                "shares": 14776353000,
+                "meaning": "Date de couverture du rapport, différente de la fin de l’exercice."
+              },
+              {
+                "tag": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+                "period_start": "2024-09-29",
+                "period_end": "2025-09-27",
+                "shares": 15004697000,
+                "meaning": "Moyenne diluée sur la période, différente du nombre instantané."
+              }
+            ],
+            "dividend_example": {
+              "common_dividends_declared_per_share_USD": 1.02,
+              "declared_tag": "us-gaap:CommonStockDividendsPerShareDeclared",
+              "generic_dividends_paid_USD": 15421000000,
+              "generic_paid_tag": "us-gaap:PaymentsOfDividends",
+              "latest_end_found_in_annual_filing_for_common_stock_payments_tag": "2017-09-30",
+              "warning": "PaymentsOfDividends couvre aussi préférentielles et participations ne donnant pas contrôle. Un tag absent/récent non renseigné n’est pas un zéro. Déclaré et payé sont distincts."
+            },
+            "fy_warning": "Le 10-K FY2025 inclut aussi des faits 2024 avec fy=2025. Reconstruire l’exercice depuis start/end et conserver filed/accn. Les faits contenus dans un 10-K ne sont pas tous annuels."
+          }
+        },
+        {
+          "name": "sec_submissions_apple",
+          "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+          "status": 200,
+          "content_type": "application/json",
+          "bytes": 163743,
+          "server_date": "Tue, 06 Oct 2026 17:09:03 GMT",
+          "elapsed_seconds": 7.118,
+          "observations": {
+            "company": "Apple Inc.",
+            "tickers": [
+              "AAPL"
+            ],
+            "exchanges": [
+              "Nasdaq"
+            ],
+            "recent_filing_count": 1000,
+            "recent_form4_count": 597,
+            "recent_form10k_count": 11,
+            "older_files": [
+              {
+                "name": "CIK0000320193-submissions-001.json",
+                "filingCount": 1264,
+                "filingFrom": "1994-01-26",
+                "filingTo": "2015-09-15"
+              }
+            ]
+          }
+        },
+        {
+          "name": "nasdaq_symbols",
+          "url": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+          "status": 200,
+          "content_type": "text/plain",
+          "bytes": 349903,
+          "server_date": "Tue, 06 Oct 2026 17:09:12 GMT",
+          "elapsed_seconds": 11.275,
+          "observations": {
+            "rows": 5636,
+            "columns": [
+              "Symbol",
+              "Security Name",
+              "Market Category",
+              "Test Issue",
+              "Financial Status",
+              "Round Lot Size",
+              "ETF",
+              "NextShares"
+            ],
+            "etf_count": 1293,
+            "test_issue_count": 8,
+            "timestamp": "File Creation Time: 1006202612:11|||||||",
+            "apple": {
+              "Symbol": "AAPL",
+              "Security Name": "Apple Inc. - Common Stock",
+              "Market Category": "Q",
+              "Test Issue": "N",
+              "Financial Status": "N",
+              "Round Lot Size": "40",
+              "ETF": "N",
+              "NextShares": "N"
+            },
+            "warning": "Nombre de lignes du répertoire ≠ nombre de sociétés/actions ordinaires. otherlisted.txt documenté mais pas testé."
+          }
+        },
+        {
+          "name": "ecb_usd_chf",
+          "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD+CHF.EUR.SP00.A?lastNObservations=2&format=csvdata",
+          "status": 200,
+          "content_type": "text/csv",
+          "bytes": 1166,
+          "server_date": "Tue, 06 Oct 2026 17:09:21 GMT",
+          "elapsed_seconds": 6.989,
+          "observations": {
+            "rows": 4,
+            "values": [
+              {
+                "KEY": "EXR.D.CHF.EUR.SP00.A",
+                "TIME_PERIOD": "2026-10-05",
+                "OBS_VALUE": "0.9311",
+                "CURRENCY": "CHF",
+                "CURRENCY_DENOM": "EUR",
+                "UNIT": "CHF",
+                "UNIT_MULT": "0"
+              },
+              {
+                "KEY": "EXR.D.CHF.EUR.SP00.A",
+                "TIME_PERIOD": "2026-10-06",
+                "OBS_VALUE": "0.9359",
+                "CURRENCY": "CHF",
+                "CURRENCY_DENOM": "EUR",
+                "UNIT": "CHF",
+                "UNIT_MULT": "0"
+              },
+              {
+                "KEY": "EXR.D.USD.EUR.SP00.A",
+                "TIME_PERIOD": "2026-10-05",
+                "OBS_VALUE": "1.1204",
+                "CURRENCY": "USD",
+                "CURRENCY_DENOM": "EUR",
+                "UNIT": "USD",
+                "UNIT_MULT": "0"
+              },
+              {
+                "KEY": "EXR.D.USD.EUR.SP00.A",
+                "TIME_PERIOD": "2026-10-06",
+                "OBS_VALUE": "1.1269",
+                "CURRENCY": "USD",
+                "CURRENCY_DENOM": "EUR",
+                "UNIT": "USD",
+                "UNIT_MULT": "0"
+              }
+            ],
+            "warning": "Valeurs exprimées en CHF ou USD par EUR, taux de référence. Aucun cours d’action."
+          }
+        }
+      ]
+    },
+    "regulators_tests.json": [
+      {
+        "source": "filings.xbrl.org API list",
+        "url": "https://filings.xbrl.org/api/filings?page%5Bsize%5D=1&sort=-processed&include=entity",
+        "tested_on": "2026-10-06",
+        "auth": "none",
+        "status": 200,
+        "bytes": 1895,
+        "records_returned": 1,
+        "top_keys": [
+          "data",
+          "links",
+          "included",
+          "meta",
+          "jsonapi"
+        ],
+        "selected_filing_id": "26151",
+        "selected_period_end": "2026-06-30",
+        "selected_country": "DK",
+        "note": "Test HTTP initial effectué avant les autres ; l’URL JSON de ce résultat a été utilisée dans le test facts."
+      },
+      {
+        "source": "filings.xbrl.org facts",
+        "url": "https://filings.xbrl.org/529900PMO5IBS8IO2N04/2026-06-30/ESEF/DK/0/529900PMO5IBS8IO2N04-2026-06-30-da.json",
+        "tested_at": "2026-10-06T17:13:45.650506+00:00",
+        "auth": "none",
+        "status": 200,
+        "bytes": 141755,
+        "content_type": "application/json",
+        "top_keys": [
+          "documentInfo",
+          "facts"
+        ],
+        "facts_count": 375,
+        "fact_fields": [
+          "value",
+          "decimals",
+          "dimensions"
+        ],
+        "dimension_fields": [
+          "concept",
+          "entity",
+          "period",
+          "ifrs-full:ConsolidatedAndSeparateFinancialStatementsAxis",
+          "unit"
+        ],
+        "note": "Un rapport danois récent téléchargé sans clé. API source indique 45 erreurs, 1 avertissement et 0 incohérence : faits à valider, pas garantie de fiabilité."
+      },
+      {
+        "source": "TWSE official Swagger",
+        "url": "https://openapi.twse.com.tw/v1/swagger.json",
+        "tested_at": "2026-10-06T17:13:53.307271+00:00",
+        "auth": "none",
+        "status": 200,
+        "bytes": 309960,
+        "content_type": "application/json",
+        "top_keys": [
+          "swagger",
+          "info",
+          "host",
+          "basePath",
+          "tags",
+          "schemes",
+          "paths"
+        ],
+        "path_count": 143,
+        "security": null,
+        "securityDefinitions": null,
+        "fundamental_paths": [
+          {
+            "path": "/opendata/t187ap45_L",
+            "summary": "上市公司股利分派情形",
+            "parameters": []
+          },
+          {
+            "path": "/opendata/t187ap03_L",
+            "summary": "上市公司基本資料",
+            "parameters": []
+          },
+          {
+            "path": "/opendata/t187ap05_L",
+            "summary": "上市公司每月營業收入彙總表",
+            "parameters": []
+          },
+          {
+            "path": "/opendata/t187ap06_L_ci",
+            "summary": "上市公司綜合損益表(一般業)",
+            "parameters": []
+          },
+          {
+            "path": "/opendata/t187ap07_L_ci",
+            "summary": "上市公司資產負債表(一般業)",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "source": "Info-financiere one record",
+        "url": "https://www.info-financiere.gouv.fr/api/explore/v2.1/catalog/datasets/flux-amf-new-prod/records?limit=1",
+        "tested_at": "2026-10-06T17:14:09.256256+00:00",
+        "auth": "none",
+        "status": 200,
+        "bytes": 2761,
+        "content_type": "application/json; charset=utf-8",
+        "top_keys": [
+          "total_count",
+          "results"
+        ],
+        "records_returned": 1,
+        "total_count": 538103,
+        "record_fields": [
+          "uin_ver_fin",
+          "uin_ver_lov",
+          "uin_idt_uin",
+          "uin_dat_amf",
+          "uin_dat_mar",
+          "filename",
+          "identificationdiffuseur_idi_cod_dif",
+          "identificationsociete_iso_nom_soc",
+          "identificationsociete_iso_cd_amf",
+          "identificationsociete_iso_url_irg",
+          "identificationsociete_iso_pay_ss",
+          "identificationsociete_iso_cd_isi",
+          "identificationsociete_iso_url_int",
+          "identificationsociete_iso_url_log",
+          "identificationsociete_iso_cd_lei",
+          "fichierdecontenu_inf_fic_nom",
+          "informationdeposee_inf_dat_emt",
+          "informationdeposee_inf_tit_inf",
+          "informationdeposee_inf_stp_pri",
+          "informationdeposee_inf_cod_dif",
+          "informationdeposee_inf_stp_inf",
+          "informationdeposee_inf_lst_dif",
+          "informationdeposee_inf_lng_inf",
+          "identificationsociete_iso_code_tkr_iso_cd_mch",
+          "identificationsociete_iso_code_tkr_iso_cd_tkr",
+          "informationdeposee_inf_upg_inf_inf_upg_rel",
+          "informationdeposee_inf_upg_inf_inf_upg_sts",
+          "url_de_recuperation",
+          "timezone_uin_dat_amf",
+          "cac40",
+          "name_cac40",
+          "type_d_information",
+          "sous_type_d_information",
+          "type_of_information",
+          "subtype_of_information",
+          "type_informationn",
+          "type_d_information_ancien",
+          "type_d_information_nouveau",
+          "type_of_information_ancien",
+          "type_of_information_nouveau",
+          "code_isin_nom_sc"
+        ],
+        "note": "Métadonnées d’un document seulement ; le fichier financier sous-jacent n’a pas été téléchargé."
+      },
+      {
+        "source": "TWSE listed-company income statements",
+        "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
+        "tested_at": "2026-10-06T17:15:19.233865+00:00",
+        "auth": "none",
+        "status": 200,
+        "bytes": 1418112,
+        "content_type": "application/json",
+        "records_returned": 1049,
+        "record_fields": [
+          "出表日期",
+          "年度",
+          "季別",
+          "公司代號",
+          "公司名稱",
+          "營業收入",
+          "營業成本",
+          "原始認列生物資產及農產品之利益（損失）",
+          "生物資產當期公允價值減出售成本之變動利益（損失）",
+          "營業毛利（毛損）",
+          "未實現銷貨（損）益",
+          "已實現銷貨（損）益",
+          "營業毛利（毛損）淨額",
+          "營業費用",
+          "其他收益及費損淨額",
+          "營業利益（損失）",
+          "營業外收入及支出",
+          "稅前淨利（淨損）",
+          "所得稅費用（利益）",
+          "繼續營業單位本期淨利（淨損）",
+          "停業單位損益",
+          "合併前非屬共同控制股權損益",
+          "本期淨利（淨損）",
+          "其他綜合損益（淨額）",
+          "合併前非屬共同控制股權綜合損益淨額",
+          "本期綜合損益總額",
+          "淨利（淨損）歸屬於母公司業主",
+          "淨利（淨損）歸屬於共同控制下前手權益",
+          "淨利（淨損）歸屬於非控制權益",
+          "綜合損益總額歸屬於母公司業主",
+          "綜合損益總額歸屬於共同控制下前手權益",
+          "綜合損益總額歸屬於非控制權益",
+          "基本每股盈餘（元）"
+        ],
+        "first_record_metadata": {
+          "出表日期": "1151006",
+          "年度": "115",
+          "季別": "2",
+          "公司代號": "1101",
+          "公司名稱": "台泥"
+        },
+        "periods": [
+          "115-2"
+        ],
+        "note": "Route publiée dans Swagger officiel. Un seul téléchargement ; pas de tentative de récupérer un historique non documenté."
+      }
+    ],
+    "root_tests.json": [
+      {
+        "source": "Nestlé — compte de résultat annuel 2025 XLSX",
+        "url": "https://www.nestle.com/sites/default/files/2026-02/full-year-income-statement-2025.xlsx",
+        "tested_at_utc": "2026-10-06T17:12:47.579392+00:00",
+        "authentication": "Aucune",
+        "test_scope": "Un document proposé au téléchargement par le site officiel, sans collecte massive",
+        "http_status": 200,
+        "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "bytes": 15912,
+        "sha256": "79bbc2c9c7321c11f4aac88b5569c94e388e1b2c91359cbc077e2a4c76619435",
+        "worksheets": [
+          {
+            "name": "Income Statement 2025",
+            "rows": 39,
+            "columns": 4
+          }
+        ],
+        "sales_row": [
+          [
+            "Sales",
+            "3",
+            "89490",
+            "91354"
+          ]
+        ],
+        "result": "Le fichier XLSX officiel est accessible et lisible automatiquement."
+      }
+    ],
+    "market_tests.json": [
+      {
+        "source": "Alpha Vantage",
+        "test_type": "public_documented_demo_api",
+        "url": "https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol=IBM&apikey=demo",
+        "date_utc": "2026-10-06",
+        "exact_time_utc": null,
+        "http_status": null,
+        "http_status_note": "Le navigateur de recherche n'a pas exposé le code HTTP. Ne pas assimiler une réponse JSON à un succès de données.",
+        "response_type": "application/json",
+        "usable_market_data": false,
+        "result": "Objet Information seulement : l'exemple demo demande d'obtenir une clé API gratuite. Aucun état financier, exercice ou montant reçu.",
+        "method": "Ouverture unique de l'exemple public IBM de la documentation officielle ; aucune clé personnelle et aucun compte créés.",
+        "scope_limit": "Teste uniquement ce lien de démonstration. Ne démontre ni un échec ni un succès avec une véritable clé gratuite."
+      },
+      {
+        "source": "Stooq",
+        "test_type": "public_download_page_access",
+        "url": "https://stooq.com/db/h/",
+        "date_utc": "2026-10-06",
+        "exact_time_utc": null,
+        "http_status": null,
+        "http_status_note": "Code HTTP non exposé par le navigateur de recherche.",
+        "response_type": "text/html",
+        "usable_market_data": false,
+        "result": "Page demandant d'activer JavaScript pour vérifier le navigateur. Aucune archive de prix téléchargée.",
+        "method": "Ouverture de la page publique de téléchargements historiques ; aucune tentative de contournement de la vérification.",
+        "scope_limit": "Test d'accès à une page, pas test d'une API ou d'un export CSV. L'observation ne prouve pas que les téléchargements sont impossibles avec un navigateur ordinaire."
+      },
+      {
+        "source": "Stooq",
+        "test_type": "public_historical_ticker_page_access",
+        "url": "https://stooq.com/q/d/?s=aapl.us",
+        "date_utc": "2026-10-06",
+        "exact_time_utc": null,
+        "http_status": null,
+        "http_status_note": "Code HTTP non exposé par le navigateur de recherche.",
+        "response_type": "text/html",
+        "usable_market_data": false,
+        "result": "Vérification JavaScript du navigateur ; aucune série Apple reçue.",
+        "method": "Ouverture de la page publique d'historique d'un ticker ; aucun endpoint CSV distinct appelé.",
+        "scope_limit": "Pas de validation de profondeur historique, d'ajustement des prix, de devise ou de cadence d'automatisation."
+      }
+    ],
+    "market_quote_tests.json": [
+      {
+        "source": "Yahoo Finance — précontrôle du ticker NESN.SW",
+        "test_type": "public_ticker_page_precheck",
+        "url": "https://finance.yahoo.com/quote/NESN.SW/",
+        "date_utc": "2026-10-06",
+        "exact_time_utc": null,
+        "recorded_at_utc": "2026-10-06T17:22:23Z",
+        "http_status": 429,
+        "http_status_note": "Statut 429 Too Many Requests explicitement retourné par l'outil d'ouverture web ; ce n'est pas une mesure urllib de l'endpoint chart.",
+        "response_type": null,
+        "usable_market_data": false,
+        "result": "Le contrôle préalable de la fiche publique du ticker a reçu 429. Arrêt immédiat des accès Yahoo conformément à la limite du test. Aucun cours ni historique quotidien reçu.",
+        "method": "Ouverture unique de la page publique Yahoo Finance par l'outil web ; aucune requête urllib à Yahoo, aucune clé, session de compte ou bibliothèque installée.",
+        "request_user_agent": null,
+        "user_agent_note": "Géré par l'outil web et non exposé ; aucun user-agent alternatif employé après le refus.",
+        "ticker_requested": "NESN.SW",
+        "ticker_verified_by_page": false,
+        "chart_requests_made": 0,
+        "chart_test_status": "not_attempted_after_precheck_429",
+        "chart_http_status": null,
+        "observations_received": 0,
+        "quote_fields_received": [],
+        "price_currency_received": null,
+        "first_observation_utc": null,
+        "last_observation_utc": null,
+        "scope_limit": "Ne confirme ni disponibilité ni indisponibilité de l'endpoint chart pour NESN.SW. Ne valide pas la bibliothèque yfinance. Aucun changement de domaine, IP, proxy, cookie ou session tenté après le 429.",
+        "documentation_url": "https://github.com/ranaroussi/yfinance/blob/main/yfinance/scrapers/history.py",
+        "documentation_observation": "Route /v8/finance/chart/{self.ticker} et paramètres range/interval observés dans le code officiel yfinance ; lecture documentaire seulement."
+      }
+    ]
+  },
+  "normalized_test_observations": [
+    {
+      "source": "SEC EDGAR — Companyfacts Apple",
+      "test_scope": "Une entreprise — Apple",
+      "timestamp": "2026-10-06T17:08:47.384293+00:00",
+      "http_status": 200,
+      "http_status_note": null,
+      "response_level": "Faits financiers bruts reçus",
+      "business_validation": "Exemples contrôlés ; normalisation complète à construire",
+      "summary": "503 concepts US-GAAP et 2 DEI. Différences vérifiées entre actions fin d’exercice, DEI à date de couverture et moyenne diluée ; dividendes ordinaires déclarés présents malgré un tag spécifique de paiement ancien.",
+      "limitations": "Les périodes start/end, classes et unités restent à normaliser. fy ne suffit pas. Tag absent ≠ zéro ; données standard de l’entité entière, extensions/dimensions possibles hors API.",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "bytes": 3789099,
+      "input_file": "official_us_macro_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": true,
+      "test_id": "T001"
+    },
+    {
+      "source": "SEC EDGAR — Submissions Apple",
+      "test_scope": "Une entreprise — Apple",
+      "timestamp": "2026-10-06T17:08:47.384293+00:00",
+      "http_status": 200,
+      "http_status_note": null,
+      "response_level": "Métadonnées de dépôts reçues",
+      "business_validation": "Structure et historique annoncé contrôlés",
+      "summary": "1000 dépôts récents ; fichier complémentaire d’historique annoncé. Ticker et place disponibles.",
+      "limitations": "Liste de dépôts et dates : aucun jeu supplémentaire de comptes financiers n’a été analysé par cet appel.",
+      "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+      "bytes": 163743,
+      "input_file": "official_us_macro_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": true,
+      "test_id": "T002"
+    },
+    {
+      "source": "Nasdaq Trader — Symbol Directory",
+      "test_scope": "Un fichier Nasdaq courant",
+      "timestamp": "2026-10-06T17:08:47.384293+00:00",
+      "http_status": 200,
+      "http_status_note": null,
+      "response_level": "Répertoire de titres reçu",
+      "business_validation": "Lignes et drapeaux contrôlés ; filtrage métier à construire",
+      "summary": "5636 lignes, dont 1293 ETF et 8 titres de test.",
+      "limitations": "Le total n’est pas un nombre d’actions ordinaires. Aucun cours, historique de composition ou fondamental fourni.",
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+      "bytes": 349903,
+      "input_file": "official_us_macro_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": true,
+      "test_id": "T003"
+    },
+    {
+      "source": "BCE — changes USD/EUR et CHF/EUR",
+      "test_scope": "Deux devises, deux observations par série",
+      "timestamp": "2026-10-06T17:08:47.384293+00:00",
+      "http_status": 200,
+      "http_status_note": null,
+      "response_level": "Observations de change reçues",
+      "business_validation": "Unités et dates contrôlées sur quatre observations",
+      "summary": "Quatre observations USD/EUR et CHF/EUR ; les valeurs expriment des unités de devise pour 1 EUR.",
+      "limitations": "Taux de référence : aucun prix d’action ni cours d’exécution ; ne pas inverser le sens du change.",
+      "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD+CHF.EUR.SP00.A?lastNObservations=2&format=csvdata",
+      "bytes": 1166,
+      "input_file": "official_us_macro_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": true,
+      "test_id": "T004"
+    },
+    {
+      "source": "filings.xbrl.org API list",
+      "test_scope": "Un rapport danois dans la liste API",
+      "timestamp": "2026-10-06",
+      "http_status": 200,
+      "http_status_note": null,
+      "response_level": "Métadonnées de rapport reçues",
+      "business_validation": "Découverte d’un rapport ; comptes non validés par cet appel",
+      "summary": "1 résultat ; période finissant le 2026-06-30.",
+      "limitations": "Un résultat de liste n’établit ni couverture par pays ni validité des chiffres du rapport.",
+      "url": "https://filings.xbrl.org/api/filings?page%5Bsize%5D=1&sort=-processed&include=entity",
+      "bytes": 1895,
+      "input_file": "regulators_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": true,
+      "test_id": "T005"
+    },
+    {
+      "source": "filings.xbrl.org facts",
+      "test_scope": "Un rapport danois récent",
+      "timestamp": "2026-10-06T17:13:45.650506+00:00",
+      "http_status": 200,
+      "http_status_note": null,
+      "response_level": "Faits XBRL reçus — erreurs signalées",
+      "business_validation": "Validation requise : 45 erreurs signalées à la source",
+      "summary": "375 faits avec valeur, décimales et dimensions ; 45 erreurs et 1 avertissement signalés par l’API source.",
+      "limitations": "Les chiffres n’ont pas été déclarés fiables. Traiter dimensions, comptes consolidés/séparés et erreurs de validation avant calcul.",
+      "url": "https://filings.xbrl.org/529900PMO5IBS8IO2N04/2026-06-30/ESEF/DK/0/529900PMO5IBS8IO2N04-2026-06-30-da.json",
+      "bytes": 141755,
+      "input_file": "regulators_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": true,
+      "test_id": "T006"
+    },
+    {
+      "source": "TWSE official Swagger",
+      "test_scope": "Schéma de l’API officielle TWSE",
+      "timestamp": "2026-10-06T17:13:53.307271+00:00",
+      "http_status": 200,
+      "http_status_note": null,
+      "response_level": "Documentation technique reçue",
+      "business_validation": "Aucun état financier par cet appel",
+      "summary": "Schéma Swagger reçu : 143 routes documentées, dont plusieurs routes de fondamentaux.",
+      "limitations": "Un schéma HTTP 200 ne prouve pas le retour de données financières ; un test distinct des comptes a été effectué.",
+      "url": "https://openapi.twse.com.tw/v1/swagger.json",
+      "bytes": 309960,
+      "input_file": "regulators_tests.json",
+      "document_only": true,
+      "returned_data_or_metadata": false,
+      "test_id": "T007"
+    },
+    {
+      "source": "Info-financiere one record",
+      "test_scope": "Un document réglementaire",
+      "timestamp": "2026-10-06T17:14:09.256256+00:00",
+      "http_status": 200,
+      "http_status_note": null,
+      "response_level": "Métadonnées de document reçues",
+      "business_validation": "Aucun fichier financier sous-jacent testé",
+      "summary": "1 résultat dans un catalogue annoncé de 538103 entrées ; liens de récupération et identifiants présents.",
+      "limitations": "Le total désigne des entrées documentaires, pas des sociétés. Le contenu financier lié n’a pas été téléchargé.",
+      "url": "https://www.info-financiere.gouv.fr/api/explore/v2.1/catalog/datasets/flux-amf-new-prod/records?limit=1",
+      "bytes": 2761,
+      "input_file": "regulators_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": true,
+      "test_id": "T008"
+    },
+    {
+      "source": "TWSE listed-company income statements",
+      "test_scope": "Instantané des sociétés ordinaires concernées — 2026 T2",
+      "timestamp": "2026-10-06T17:15:19.233865+00:00",
+      "http_status": 200,
+      "http_status_note": null,
+      "response_level": "Comptes de résultat bruts reçus",
+      "business_validation": "Retour et période contrôlés ; unités et cumul à normaliser",
+      "summary": "1049 lignes ; période locale 115-2, soit 2026 T2. Une seule période reçue.",
+      "limitations": "Aucun historique démontré. Traduire les champs et vérifier calendrier local, unités et nature trimestrielle ou cumulée.",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
+      "bytes": 1418112,
+      "input_file": "regulators_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": true,
+      "test_id": "T009"
+    },
+    {
+      "source": "Nestlé — compte de résultat annuel 2025 XLSX",
+      "test_scope": "Un document proposé au téléchargement par le site officiel, sans collecte massive",
+      "timestamp": "2026-10-06T17:12:47.579392+00:00",
+      "http_status": 200,
+      "http_status_note": null,
+      "response_level": "Document financier XLSX lu",
+      "business_validation": "Fichier et ligne de chiffre d’affaires lus",
+      "summary": "Classeur lisible : 39 lignes et 4 colonnes ; ligne Sales extraite. Empreinte SHA-256 conservée.",
+      "limitations": "Un compte de résultat d’un émetteur ; cela ne fournit pas à lui seul tous les états ni un connecteur générique suisse.",
+      "url": "https://www.nestle.com/sites/default/files/2026-02/full-year-income-statement-2025.xlsx",
+      "bytes": 15912,
+      "input_file": "root_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": true,
+      "test_id": "T010"
+    },
+    {
+      "source": "Alpha Vantage",
+      "test_scope": "public_documented_demo_api",
+      "timestamp": "2026-10-06",
+      "http_status": null,
+      "http_status_note": "Le navigateur de recherche n'a pas exposé le code HTTP. Ne pas assimiler une réponse JSON à un succès de données.",
+      "response_level": "Aucune donnée de marché reçue",
+      "business_validation": "Accès aux chiffres non validé",
+      "summary": "Objet Information seulement : l'exemple demo demande d'obtenir une clé API gratuite. Aucun état financier, exercice ou montant reçu.",
+      "limitations": "Teste uniquement ce lien de démonstration. Ne démontre ni un échec ni un succès avec une véritable clé gratuite.",
+      "url": "https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol=IBM&apikey=demo",
+      "bytes": null,
+      "input_file": "market_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": false,
+      "test_id": "T011"
+    },
+    {
+      "source": "Stooq",
+      "test_scope": "public_download_page_access",
+      "timestamp": "2026-10-06",
+      "http_status": null,
+      "http_status_note": "Code HTTP non exposé par le navigateur de recherche.",
+      "response_level": "Aucune donnée de marché reçue",
+      "business_validation": "Accès aux chiffres non validé",
+      "summary": "Page demandant d'activer JavaScript pour vérifier le navigateur. Aucune archive de prix téléchargée.",
+      "limitations": "Test d'accès à une page, pas test d'une API ou d'un export CSV. L'observation ne prouve pas que les téléchargements sont impossibles avec un navigateur ordinaire.",
+      "url": "https://stooq.com/db/h/",
+      "bytes": null,
+      "input_file": "market_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": false,
+      "test_id": "T012"
+    },
+    {
+      "source": "Stooq",
+      "test_scope": "public_historical_ticker_page_access",
+      "timestamp": "2026-10-06",
+      "http_status": null,
+      "http_status_note": "Code HTTP non exposé par le navigateur de recherche.",
+      "response_level": "Aucune donnée de marché reçue",
+      "business_validation": "Accès aux chiffres non validé",
+      "summary": "Vérification JavaScript du navigateur ; aucune série Apple reçue.",
+      "limitations": "Pas de validation de profondeur historique, d'ajustement des prix, de devise ou de cadence d'automatisation.",
+      "url": "https://stooq.com/q/d/?s=aapl.us",
+      "bytes": null,
+      "input_file": "market_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": false,
+      "test_id": "T013"
+    },
+    {
+      "source": "Yahoo Finance — précontrôle du ticker NESN.SW",
+      "test_scope": "Précontrôle de la page publique NESN.SW uniquement",
+      "timestamp": "2026-10-06",
+      "http_status": 429,
+      "http_status_note": "Statut 429 Too Many Requests explicitement retourné par l'outil d'ouverture web ; ce n'est pas une mesure urllib de l'endpoint chart.",
+      "response_level": "Aucune donnée — précontrôle Yahoo bloqué",
+      "business_validation": "Aucun appel chart ; yfinance non validé",
+      "summary": "La page du ticker a renvoyé HTTP 429 via l’outil web. Arrêt immédiat ; aucun appel à l’endpoint chart, aucun cours reçu.",
+      "limitations": "Ce refus de page ne prouve pas le résultat de l’API chart ni de yfinance. Heure exacte non capturée ; horodatage d’enregistrement distinct dans le JSON.",
+      "url": "https://finance.yahoo.com/quote/NESN.SW/",
+      "bytes": null,
+      "input_file": "market_quote_tests.json",
+      "document_only": false,
+      "returned_data_or_metadata": false,
+      "test_id": "T014"
+    }
+  ],
+  "source_documents": [
+    {
+      "source_id": "S001",
+      "source": "ROIC.ai — API Free",
+      "catalogue_file": "root_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://www.roic.ai/pricing",
+        "https://www.roic.ai/api",
+        "https://www.roic.ai/api/docs/authentication",
+        "https://www.roic.ai/api/docs/bulk/fundamentals"
+      ]
+    },
+    {
+      "source_id": "S002",
+      "source": "Eulerpool — offre API Free annoncée",
+      "catalogue_file": "root_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://eulerpool.com/financial-data-api/pricing",
+        "https://eulerpool.com/developers/rate-limits",
+        "https://eulerpool.com/developers/quickstart",
+        "https://eulerpool.com/financial-data-api/licensing"
+      ]
+    },
+    {
+      "source_id": "S003",
+      "source": "Relations investisseurs — exemple Nestlé",
+      "catalogue_file": "root_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://www.nestle.com/investors/publications",
+        "https://www.nestle.com/investors/annual-report",
+        "https://www.nestle.com/sites/default/files/2026-02/full-year-income-statement-2025.xlsx"
+      ]
+    },
+    {
+      "source_id": "S004",
+      "source": "Relations investisseurs — exemple Novartis",
+      "catalogue_file": "root_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://www.novartis.com/investors/financial-data",
+        "https://www.novartis.com/events/novartis-2025-financial-results",
+        "https://www.novartis.com/investors/reporting-and-transparency-hub"
+      ]
+    },
+    {
+      "source_id": "S005",
+      "source": "Stock Analysis — accès automatisé conditionnel, sans API",
+      "catalogue_file": "root_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://stockanalysis.com/help/faq/api-access/",
+        "https://stockanalysis.com/terms-of-use/",
+        "https://stockanalysis.com/robots.txt",
+        "https://stockanalysis.com/data-sources/"
+      ]
+    },
+    {
+      "source_id": "S006",
+      "source": "Aswath Damodaran — données de valorisation NYU",
+      "catalogue_file": "root_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://pages.stern.nyu.edu/adamodar/New_Home_Page/datacurrent.html",
+        "https://pages.stern.nyu.edu/adamodar/New_Home_Page/datahistory.html",
+        "https://pages.stern.nyu.edu/adamodar/New_Home_Page/datafile/ctryprem.html"
+      ]
+    },
+    {
+      "source_id": "S007",
+      "source": "Kenneth French — Data Library",
+      "catalogue_file": "root_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+        "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library/det_12_ind_port.html"
+      ]
+    },
+    {
+      "source_id": "S008",
+      "source": "EIA — Open Data énergie",
+      "catalogue_file": "root_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://www.eia.gov/opendata/",
+        "https://www.eia.gov/opendata/documentation.php",
+        "https://www.eia.gov/opendata/register.php"
+      ]
+    },
+    {
+      "source_id": "S009",
+      "source": "Cboe — historiques publics VIX et volatilité",
+      "catalogue_file": "root_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://www.cboe.com/tradable-products/vix/vix-historical-data/"
+      ]
+    },
+    {
+      "source_id": "S010",
+      "source": "Yahoo Finance via yfinance",
+      "catalogue_file": "market_catalog.json",
+      "priority": "B",
+      "priority_original": "A",
+      "assembly_note": "Priorité B à l’assemblage : accès Yahoo non officiel et fragile. Quatre exercices peuvent satisfaire le minimum de trois du moteur si les champs sont complets et cohérents.",
+      "urls": [
+        "https://github.com/ranaroussi/yfinance",
+        "https://github.com/ranaroussi/yfinance/blob/main/yfinance/scrapers/fundamentals.py",
+        "https://ranaroussi.github.io/yfinance/reference/index.html",
+        "https://ranaroussi.github.io/yfinance/reference/api/yfinance.download.html"
+      ]
+    },
+    {
+      "source_id": "S011",
+      "source": "SimFin",
+      "catalogue_file": "market_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://www.simfin.com/en/prices/",
+        "https://simfin.readthedocs.io/en/latest/load.html"
+      ]
+    },
+    {
+      "source_id": "S012",
+      "source": "Fiscal.ai API",
+      "catalogue_file": "market_catalog.json",
+      "priority": "B",
+      "priority_original": "A",
+      "assembly_note": "Priorité B à l’assemblage : échantillon de sociétés imposé et conditions d’essai à confirmer ; aucune couverture mondiale gratuite validée.",
+      "urls": [
+        "https://docs.fiscal.ai/docs/guides/free-trial",
+        "https://docs.fiscal.ai/docs/introduction"
+      ]
+    },
+    {
+      "source_id": "S013",
+      "source": "Alpha Vantage",
+      "catalogue_file": "market_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://www.alphavantage.co/support/",
+        "https://www.alphavantage.co/documentation/"
+      ]
+    },
+    {
+      "source_id": "S014",
+      "source": "Finnhub",
+      "catalogue_file": "market_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://finnhub.io/pricing",
+        "https://finnhub.io/docs/api/company-basic-financials",
+        "https://finnhub.io/docs/api/financials-reported",
+        "https://finnhub.io/docs/api/stock-candles",
+        "https://finnhub.io/docs/api/rate-limit",
+        "https://finnhub.io/docs/api/quote"
+      ]
+    },
+    {
+      "source_id": "S015",
+      "source": "Twelve Data",
+      "catalogue_file": "market_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://twelvedata.com/pricing",
+        "https://twelvedata.com/docs"
+      ]
+    },
+    {
+      "source_id": "S016",
+      "source": "Financial Modeling Prep (FMP)",
+      "catalogue_file": "market_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://site.financialmodelingprep.com/developer/docs/pricing",
+        "https://site.financialmodelingprep.com/developer/docs"
+      ]
+    },
+    {
+      "source_id": "S017",
+      "source": "Stooq",
+      "catalogue_file": "market_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://stooq.com/db/h/",
+        "https://stooq.com/q/d/?s=aapl.us",
+        "https://stooq.com/pomoc/"
+      ]
+    },
+    {
+      "source_id": "S018",
+      "source": "Nasdaq Data Link",
+      "catalogue_file": "market_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://data.nasdaq.com/publishers/QDL",
+        "https://data.nasdaq.com/databases/SF1",
+        "https://data.nasdaq.com/databases/SEP",
+        "https://data.nasdaq.com/search?filters=%5B%22Free%22%5D"
+      ]
+    },
+    {
+      "source_id": "S019",
+      "source": "Financial Datasets (financialdatasets.ai)",
+      "catalogue_file": "market_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://www.financialdatasets.ai/pricing",
+        "https://docs.financialdatasets.ai/quickstart",
+        "https://docs.financialdatasets.ai/introduction"
+      ]
+    },
+    {
+      "source_id": "S020",
+      "source": "FinancialJuice",
+      "catalogue_file": "market_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://www.financialjuice.com/home",
+        "https://www.financialjuice.com/tos.aspx"
+      ]
+    },
+    {
+      "source_id": "S021",
+      "source": "OpenBB",
+      "catalogue_file": "market_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://docs.openbb.co/odp/python/quickstart",
+        "https://github.com/OpenBB-finance/OpenBB"
+      ]
+    },
+    {
+      "source_id": "S022",
+      "source": "XBRL International — filings.xbrl.org",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://filings.xbrl.org/docs/api",
+        "https://filings.xbrl.org/docs/about",
+        "https://filings.xbrl.org/source",
+        "https://www.esma.europa.eu/issuer-disclosure/electronic-reporting"
+      ]
+    },
+    {
+      "source_id": "S023",
+      "source": "France — DILA / AMF Info-financiere",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://www.data.gouv.fr/dataservices/api-info-financiere",
+        "https://www.data.gouv.fr/datasets/info-financiere",
+        "https://info-financiere.gouv.fr/explore/dataset/flux-amf-new-prod/api/",
+        "https://www.info-financiere.gouv.fr/api-console/explore/v2.1/",
+        "https://www.amf-france.org/fr/actualites-publications/dossiers-thematiques/esef"
+      ]
+    },
+    {
+      "source_id": "S024",
+      "source": "France — INPI / Registre national des entreprises",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://data.inpi.fr/content/editorial/Acces_API_Entreprises",
+        "https://www.inpi.fr/sites/default/files/2026-09/documentation%20technique%20API_comptes_annuels%20v6-1-AA.pdf",
+        "https://data.inpi.fr/content/editorial/licences_reutilisation_donnees_inpi",
+        "https://www.inpi.fr/sites/default/files/2026-10/Licence%20donne%CC%81es%20RNE_2026.pdf"
+      ]
+    },
+    {
+      "source_id": "S025",
+      "source": "Royaume-Uni — FCA National Storage Mechanism",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://www.fca.org.uk/markets/primary-markets/regulatory-disclosures/national-storage-mechanism",
+        "https://www.fca.org.uk/publication/primary-market/nsm-investor-user-guide.pdf",
+        "https://www.fca.org.uk/markets/filing-structured-annual-financial-reports"
+      ]
+    },
+    {
+      "source_id": "S026",
+      "source": "Royaume-Uni — Companies House",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://download.companieshouse.gov.uk/en_accountsdata.html",
+        "https://download.companieshouse.gov.uk/historicmonthlyaccountsdata.html",
+        "https://developer.company-information.service.gov.uk/developer-guidelines/",
+        "https://developer.company-information.service.gov.uk/authentication",
+        "https://developer.company-information.service.gov.uk/get-started"
+      ]
+    },
+    {
+      "source_id": "S027",
+      "source": "Japon — FSA EDINET API v2",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://disclosure2.edinet-fsa.go.jp/WEEK0020.aspx",
+        "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/WEEK0060.html",
+        "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/download/ESE140206.pdf",
+        "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/WZEK0090_001.html",
+        "https://www.fsa.go.jp/common/budget/kourituka/03_h31/process/03_r01_08.pdf"
+      ]
+    },
+    {
+      "source_id": "S028",
+      "source": "Japon — JPX J-Quants Free",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://jpx-jquants.com/en",
+        "https://www.jpx.co.jp/corporate/news/news-releases/6020/20260119.html"
+      ]
+    },
+    {
+      "source_id": "S029",
+      "source": "Corée du Sud — FSS OpenDART",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://engopendart.fss.or.kr/intro/main.do",
+        "https://engopendart.fss.or.kr/intro/terms.do",
+        "https://engopendart.fss.or.kr/guide/detail.do?apiGrpCd=DE003&apiId=AE00036",
+        "https://engopendart.fss.or.kr/guide/detail.do?apiGrpCd=DE003&apiId=AE00035",
+        "https://engopendart.fss.or.kr/uss/umt/EgovMberInsertView.do"
+      ]
+    },
+    {
+      "source_id": "S030",
+      "source": "Taïwan — TWSE OpenAPI / données MOPS",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://openapi.twse.com.tw/",
+        "https://openapi.twse.com.tw/v1/swagger.json",
+        "https://data.gov.tw/dataset/94831",
+        "https://data.gov.tw/dataset/92001",
+        "https://eshop.twse.com.tw/en/mops/detail/000000007af53455017af57d815f000f"
+      ]
+    },
+    {
+      "source_id": "S031",
+      "source": "Brésil — CVM Dados Abertos DFP et ITR",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://dados.cvm.gov.br/dataset/cia_aberta-doc-dfp",
+        "https://dados.cvm.gov.br/dataset/cia_aberta-doc-itr",
+        "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/"
+      ]
+    },
+    {
+      "source_id": "S032",
+      "source": "Suisse — rapports officiels des émetteurs / exigences SIX",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://handbooks.six-group.com/en/investor-relations/ir-massnahmen/website",
+        "https://www.ser-ag.com/en/projects/reports-extensions.html",
+        "https://www.nestle.com/investors/publications",
+        "https://www.nestle.com/investors/annual-report",
+        "https://www.nestle.com/sites/default/files/2026-02/annual-review-2025-en.pdf"
+      ]
+    },
+    {
+      "source_id": "S033",
+      "source": "Canada — SEDAR+",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://systems.securities-administrators.ca/onlinehelp/general-help/getting-started/general-public-access/",
+        "https://systems.securities-administrators.ca/terms-of-use/",
+        "https://sedarplus.ca/home/"
+      ]
+    },
+    {
+      "source_id": "S034",
+      "source": "Hong Kong — HKEXnews",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://www.hkexnews.hk/",
+        "https://www1.hkexnews.hk/search/titlesearch.xhtml",
+        "https://www2.hkexnews.hk/Global/Exchange/Terms-of-Use?sc_lang=en",
+        "https://www.hkex.com.hk/global/exchange/terms-of-use?sc_lang=en"
+      ]
+    },
+    {
+      "source_id": "S035",
+      "source": "Inde — publications NSE / BSE",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://www.nseindia.com/static/nse-terms-of-use",
+        "https://www.bseindia.com/corporates/Comp_Results.aspx?Code=542655",
+        "https://www.bseindia.com/markets/MarketInfo/DownloadAttach.aspx?attachedId=b31c397f-ad57-44d7-a9f4-1d52f0819e7e&id=20230630-12"
+      ]
+    },
+    {
+      "source_id": "S036",
+      "source": "Allemagne — Unternehmensregister / Bundesanzeiger",
+      "catalogue_file": "regulators_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://www.unternehmensregister.de/de/so-gehts/kosten?language=de",
+        "https://www.bundesanzeiger.de/pub/D088.pdf",
+        "https://www.bundesanzeiger.de/pub/de/suche-rechnungslegung",
+        "https://unternehmensregister.de/de/so-gehts/uebermitteln?dest=ureg&language=de"
+      ]
+    },
+    {
+      "source_id": "S037",
+      "source": "SEC EDGAR — comptes, dépôts et XBRL publics",
+      "catalogue_file": "official_us_macro_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data",
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+        "https://data.sec.gov/submissions/CIK0000320193.json",
+        "https://www.sec.gov/files/company_tickers_exchange.json",
+        "https://www.sec.gov/Archives/edgar/daily-index/xbrl/companyfacts.zip",
+        "https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip"
+      ]
+    },
+    {
+      "source_id": "S038",
+      "source": "SEC EDGAR — Form 13F et transactions des dirigeants (Forms 3/4/5)",
+      "catalogue_file": "official_us_macro_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets",
+        "https://www.sec.gov/data-research/sec-markets-data/insider-transactions-data-sets",
+        "https://www.sec.gov/rules-regulations/staff-guidance/division-investment-management-frequently-asked-questions/frequently-asked-questions-about-form-13f",
+        "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-69"
+      ]
+    },
+    {
+      "source_id": "S039",
+      "source": "Nasdaq Trader — Symbol Directory",
+      "catalogue_file": "official_us_macro_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://www.nasdaqtrader.com/trader.aspx?id=symboldirdefs",
+        "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+        "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
+      ]
+    },
+    {
+      "source_id": "S040",
+      "source": "OpenFIGI",
+      "catalogue_file": "official_us_macro_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://www.openfigi.com/",
+        "https://www.openfigi.com/api/documentation"
+      ]
+    },
+    {
+      "source_id": "S041",
+      "source": "GLEIF — LEI, Golden Copy et liens de propriété",
+      "catalogue_file": "official_us_macro_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://www.gleif.org/en/lei-data/gleif-api/",
+        "https://www.gleif.org/en/lei-data/access-and-use-lei-data",
+        "https://www.gleif.org/en/lei-data/gleif-golden-copy",
+        "https://www.gleif.org/fr/about/open-data/",
+        "https://documenter.getpostman.com/view/7679680/SVYrrxuU"
+      ]
+    },
+    {
+      "source_id": "S042",
+      "source": "FRED / ALFRED — Federal Reserve Bank of St. Louis",
+      "catalogue_file": "official_us_macro_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://fred.stlouisfed.org/docs/api/api_key.html",
+        "https://fred.stlouisfed.org/docs/api/fred/errors.html",
+        "https://fred.stlouisfed.org/docs/api/fred/realtime_period.html",
+        "https://fred.stlouisfed.org/docs/api/terms_of_use.html"
+      ]
+    },
+    {
+      "source_id": "S043",
+      "source": "Banque centrale européenne — ECB Data Portal / SDMX",
+      "catalogue_file": "official_us_macro_catalog.json",
+      "priority": "A",
+      "priority_original": "A",
+      "assembly_note": "",
+      "urls": [
+        "https://data.ecb.europa.eu/help/api/data-examples",
+        "https://data-api.ecb.europa.eu/service/data/EXR/D.USD+CHF.EUR.SP00.A?lastNObservations=2&format=csvdata",
+        "https://www.ecb.europa.eu/services/using-our-site/disclaimer/html/index.en.html"
+      ]
+    },
+    {
+      "source_id": "S044",
+      "source": "Banque mondiale — Indicators API v2",
+      "catalogue_file": "official_us_macro_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation",
+        "https://datahelpdesk.worldbank.org/knowledgebase/articles/898581-api-basic-call-structures",
+        "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets"
+      ]
+    },
+    {
+      "source_id": "S045",
+      "source": "Banque nationale suisse — Portail de données",
+      "catalogue_file": "official_us_macro_catalog.json",
+      "priority": "B",
+      "priority_original": "B",
+      "assembly_note": "",
+      "urls": [
+        "https://data.snb.ch/en",
+        "https://data.snb.ch/en/topics/texts/doc/introduction",
+        "https://data.snb.ch/fr/topics/snb/cube/snboffzisa"
+      ]
+    },
+    {
+      "source_id": "S046",
+      "source": "GDELT — métadonnées d'actualité et événements",
+      "catalogue_file": "official_us_macro_catalog.json",
+      "priority": "C",
+      "priority_original": "C",
+      "assembly_note": "",
+      "urls": [
+        "https://gdeltproject.org/data.html",
+        "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/",
+        "https://blog.gdeltproject.org/doc-geo-2-0-api-updates-full-year-searching-and-more/"
+      ]
+    }
+  ]
+}

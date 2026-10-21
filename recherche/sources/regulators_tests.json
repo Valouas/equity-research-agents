@@ -1,0 +1,212 @@
+[
+  {
+    "source": "filings.xbrl.org API list",
+    "url": "https://filings.xbrl.org/api/filings?page%5Bsize%5D=1&sort=-processed&include=entity",
+    "tested_on": "2026-10-06",
+    "auth": "none",
+    "status": 200,
+    "bytes": 1895,
+    "records_returned": 1,
+    "top_keys": [
+      "data",
+      "links",
+      "included",
+      "meta",
+      "jsonapi"
+    ],
+    "selected_filing_id": "26151",
+    "selected_period_end": "2026-06-30",
+    "selected_country": "DK",
+    "note": "Test HTTP initial effectué avant les autres ; l’URL JSON de ce résultat a été utilisée dans le test facts."
+  },
+  {
+    "source": "filings.xbrl.org facts",
+    "url": "https://filings.xbrl.org/529900PMO5IBS8IO2N04/2026-06-30/ESEF/DK/0/529900PMO5IBS8IO2N04-2026-06-30-da.json",
+    "tested_at": "2026-10-06T17:13:45.650506+00:00",
+    "auth": "none",
+    "status": 200,
+    "bytes": 141755,
+    "content_type": "application/json",
+    "top_keys": [
+      "documentInfo",
+      "facts"
+    ],
+    "facts_count": 375,
+    "fact_fields": [
+      "value",
+      "decimals",
+      "dimensions"
+    ],
+    "dimension_fields": [
+      "concept",
+      "entity",
+      "period",
+      "ifrs-full:ConsolidatedAndSeparateFinancialStatementsAxis",
+      "unit"
+    ],
+    "note": "Un rapport danois récent téléchargé sans clé. API source indique 45 erreurs, 1 avertissement et 0 incohérence : faits à valider, pas garantie de fiabilité."
+  },
+  {
+    "source": "TWSE official Swagger",
+    "url": "https://openapi.twse.com.tw/v1/swagger.json",
+    "tested_at": "2026-10-06T17:13:53.307271+00:00",
+    "auth": "none",
+    "status": 200,
+    "bytes": 309960,
+    "content_type": "application/json",
+    "top_keys": [
+      "swagger",
+      "info",
+      "host",
+      "basePath",
+      "tags",
+      "schemes",
+      "paths"
+    ],
+    "path_count": 143,
+    "security": null,
+    "securityDefinitions": null,
+    "fundamental_paths": [
+      {
+        "path": "/opendata/t187ap45_L",
+        "summary": "上市公司股利分派情形",
+        "parameters": []
+      },
+      {
+        "path": "/opendata/t187ap03_L",
+        "summary": "上市公司基本資料",
+        "parameters": []
+      },
+      {
+        "path": "/opendata/t187ap05_L",
+        "summary": "上市公司每月營業收入彙總表",
+        "parameters": []
+      },
+      {
+        "path": "/opendata/t187ap06_L_ci",
+        "summary": "上市公司綜合損益表(一般業)",
+        "parameters": []
+      },
+      {
+        "path": "/opendata/t187ap07_L_ci",
+        "summary": "上市公司資產負債表(一般業)",
+        "parameters": []
+      }
+    ]
+  },
+  {
+    "source": "Info-financiere one record",
+    "url": "https://www.info-financiere.gouv.fr/api/explore/v2.1/catalog/datasets/flux-amf-new-prod/records?limit=1",
+    "tested_at": "2026-10-06T17:14:09.256256+00:00",
+    "auth": "none",
+    "status": 200,
+    "bytes": 2761,
+    "content_type": "application/json; charset=utf-8",
+    "top_keys": [
+      "total_count",
+      "results"
+    ],
+    "records_returned": 1,
+    "total_count": 538103,
+    "record_fields": [
+      "uin_ver_fin",
+      "uin_ver_lov",
+      "uin_idt_uin",
+      "uin_dat_amf",
+      "uin_dat_mar",
+      "filename",
+      "identificationdiffuseur_idi_cod_dif",
+      "identificationsociete_iso_nom_soc",
+      "identificationsociete_iso_cd_amf",
+      "identificationsociete_iso_url_irg",
+      "identificationsociete_iso_pay_ss",
+      "identificationsociete_iso_cd_isi",
+      "identificationsociete_iso_url_int",
+      "identificationsociete_iso_url_log",
+      "identificationsociete_iso_cd_lei",
+      "fichierdecontenu_inf_fic_nom",
+      "informationdeposee_inf_dat_emt",
+      "informationdeposee_inf_tit_inf",
+      "informationdeposee_inf_stp_pri",
+      "informationdeposee_inf_cod_dif",
+      "informationdeposee_inf_stp_inf",
+      "informationdeposee_inf_lst_dif",
+      "informationdeposee_inf_lng_inf",
+      "identificationsociete_iso_code_tkr_iso_cd_mch",
+      "identificationsociete_iso_code_tkr_iso_cd_tkr",
+      "informationdeposee_inf_upg_inf_inf_upg_rel",
+      "informationdeposee_inf_upg_inf_inf_upg_sts",
+      "url_de_recuperation",
+      "timezone_uin_dat_amf",
+      "cac40",
+      "name_cac40",
+      "type_d_information",
+      "sous_type_d_information",
+      "type_of_information",
+      "subtype_of_information",
+      "type_informationn",
+      "type_d_information_ancien",
+      "type_d_information_nouveau",
+      "type_of_information_ancien",
+      "type_of_information_nouveau",
+      "code_isin_nom_sc"
+    ],
+    "note": "Métadonnées d’un document seulement ; le fichier financier sous-jacent n’a pas été téléchargé."
+  },
+  {
+    "source": "TWSE listed-company income statements",
+    "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
+    "tested_at": "2026-10-06T17:15:19.233865+00:00",
+    "auth": "none",
+    "status": 200,
+    "bytes": 1418112,
+    "content_type": "application/json",
+    "records_returned": 1049,
+    "record_fields": [
+      "出表日期",
+      "年度",
+      "季別",
+      "公司代號",
+      "公司名稱",
+      "營業收入",
+      "營業成本",
+      "原始認列生物資產及農產品之利益（損失）",
+      "生物資產當期公允價值減出售成本之變動利益（損失）",
+      "營業毛利（毛損）",
+      "未實現銷貨（損）益",
+      "已實現銷貨（損）益",
+      "營業毛利（毛損）淨額",
+      "營業費用",
+      "其他收益及費損淨額",
+      "營業利益（損失）",
+      "營業外收入及支出",
+      "稅前淨利（淨損）",
+      "所得稅費用（利益）",
+      "繼續營業單位本期淨利（淨損）",
+      "停業單位損益",
+      "合併前非屬共同控制股權損益",
+      "本期淨利（淨損）",
+      "其他綜合損益（淨額）",
+      "合併前非屬共同控制股權綜合損益淨額",
+      "本期綜合損益總額",
+      "淨利（淨損）歸屬於母公司業主",
+      "淨利（淨損）歸屬於共同控制下前手權益",
+      "淨利（淨損）歸屬於非控制權益",
+      "綜合損益總額歸屬於母公司業主",
+      "綜合損益總額歸屬於共同控制下前手權益",
+      "綜合損益總額歸屬於非控制權益",
+      "基本每股盈餘（元）"
+    ],
+    "first_record_metadata": {
+      "出表日期": "1151006",
+      "年度": "115",
+      "季別": "2",
+      "公司代號": "1101",
+      "公司名稱": "台泥"
+    },
+    "periods": [
+      "115-2"
+    ],
+    "note": "Route publiée dans Swagger officiel. Un seul téléchargement ; pas de tentative de récupérer un historique non documenté."
+  }
+]

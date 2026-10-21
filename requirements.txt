@@ -1,0 +1,2 @@
+# Sur Windows, zoneinfo a besoin de la base de fuseaux horaires.
+tzdata>=2025.2; sys_platform == "win32"

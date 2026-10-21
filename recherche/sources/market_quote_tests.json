@@ -1,0 +1,31 @@
+[
+  {
+    "source": "Yahoo Finance — précontrôle du ticker NESN.SW",
+    "test_type": "public_ticker_page_precheck",
+    "url": "https://finance.yahoo.com/quote/NESN.SW/",
+    "date_utc": "2026-10-06",
+    "exact_time_utc": null,
+    "recorded_at_utc": "2026-10-06T17:22:23Z",
+    "http_status": 429,
+    "http_status_note": "Statut 429 Too Many Requests explicitement retourné par l'outil d'ouverture web ; ce n'est pas une mesure urllib de l'endpoint chart.",
+    "response_type": null,
+    "usable_market_data": false,
+    "result": "Le contrôle préalable de la fiche publique du ticker a reçu 429. Arrêt immédiat des accès Yahoo conformément à la limite du test. Aucun cours ni historique quotidien reçu.",
+    "method": "Ouverture unique de la page publique Yahoo Finance par l'outil web ; aucune requête urllib à Yahoo, aucune clé, session de compte ou bibliothèque installée.",
+    "request_user_agent": null,
+    "user_agent_note": "Géré par l'outil web et non exposé ; aucun user-agent alternatif employé après le refus.",
+    "ticker_requested": "NESN.SW",
+    "ticker_verified_by_page": false,
+    "chart_requests_made": 0,
+    "chart_test_status": "not_attempted_after_precheck_429",
+    "chart_http_status": null,
+    "observations_received": 0,
+    "quote_fields_received": [],
+    "price_currency_received": null,
+    "first_observation_utc": null,
+    "last_observation_utc": null,
+    "scope_limit": "Ne confirme ni disponibilité ni indisponibilité de l'endpoint chart pour NESN.SW. Ne valide pas la bibliothèque yfinance. Aucun changement de domaine, IP, proxy, cookie ou session tenté après le 429.",
+    "documentation_url": "https://github.com/ranaroussi/yfinance/blob/main/yfinance/scrapers/history.py",
+    "documentation_observation": "Route /v8/finance/chart/{self.ticker} et paramètres range/interval observés dans le code officiel yfinance ; lecture documentaire seulement."
+  }
+]

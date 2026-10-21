@@ -1,0 +1,228 @@
+[
+  {
+    "source": "Yahoo Finance via yfinance",
+    "category": "Agrégateur non officiel : cours et fondamentaux",
+    "geography": "Nombreuses places mondiales, disponibilité variable selon titre et champ",
+    "free_access": "Bibliothèque libre sans abonnement fournisseur intégré ; accès Yahoo non officiel destiné à la recherche et à l'usage personnel selon le projet.",
+    "auth": "Pas de clé API fournisseur à acheter pour les fonctions ordinaires ; mécanismes de session gérés par la bibliothèque.",
+    "data": "Cours OHLCV, dividendes, splits, profils, états annuels et trimestriels ; Python/Pandas et téléchargement de plusieurs tickers. Documentation anglaise.",
+    "history": "Cours : maximum disponible selon titre. Le code des états précise un maximum de 4 années ou 5 trimestres. Quatre exercices peuvent satisfaire le minimum actuel de 3 exercices du bot ; ils ne permettent pas une analyse sur 5–10 ans. Le fournisseur actuel conserve au maximum 6 exercices, ce n'est pas son seuil minimal.",
+    "quota": "Aucun quota numérique ni SLA officiel garanti par la bibliothèque.",
+    "automation": "Usage personnel/recherche selon l'avertissement du projet ; conditions Yahoo applicables. Cache et cadence modérée ; arrêt en cas de blocage.",
+    "limitations": "Bibliothèque non affiliée à Yahoo. Schémas, couverture et accès peuvent changer. Licence du code distincte des droits sur les données.",
+    "priority": "A",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://github.com/ranaroussi/yfinance",
+      "https://github.com/ranaroussi/yfinance/blob/main/yfinance/scrapers/fundamentals.py",
+      "https://ranaroussi.github.io/yfinance/reference/index.html",
+      "https://ranaroussi.github.io/yfinance/reference/api/yfinance.download.html"
+    ]
+  },
+  {
+    "source": "SimFin",
+    "category": "Fondamentaux structurés et téléchargement en volume",
+    "geography": "Environ 5 000 actions américaines annoncées",
+    "free_access": "Offre Free avec API et fichiers CSV ; pas de carte bancaire annoncée.",
+    "auth": "Compte et clé API gratuits nécessaires.",
+    "data": "Comptes de résultat, bilans, flux de trésorerie ; API et fichiers CSV exploitables avec le paquet Python SimFin. Documentation anglaise.",
+    "history": "La page affiche 5 ans dans le résumé et 7 ans dans la ligne API : retenir prudemment 5 ans avant validation. Bulk gratuit : 5 ans avec retard non chiffré sur la page.",
+    "quota": "2 requêtes/seconde pour l'API gratuite. Les crédits du backtest de l'interface sont un quota différent.",
+    "automation": "API et téléchargements prévus par le fournisseur ; conserver un compte valide et vérifier les conditions de conservation et d'usage.",
+    "limitations": "Pas une couverture mondiale. Profondeur gratuite contradictoire sur la page ; retard des fichiers gratuits ; certaines données dérivées réservées aux abonnements.",
+    "priority": "A",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.simfin.com/en/prices/",
+      "https://simfin.readthedocs.io/en/latest/load.html"
+    ]
+  },
+  {
+    "source": "Fiscal.ai API",
+    "category": "Fondamentaux mondiaux sur un échantillon gratuit",
+    "geography": "Liste prédéfinie de 100 sociétés ; États-Unis, Canada et plusieurs pays européens, dont Suisse",
+    "free_access": "Guide Free Trial : plan gratuit limité à 100 sociétés et 250 appels/jour, sans carte bancaire.",
+    "auth": "Compte, organisation et clé API nécessaires.",
+    "data": "États financiers standardisés et autres endpoints de sociétés autorisées. API JSON, documentation anglaise.",
+    "history": "Documentation générale : 20+ années annuelles et 40+ trimestres ; profondeur effectivement ouverte au plan gratuit à vérifier avec la clé.",
+    "quota": "250 appels/jour ; liste de sociétés accessible limitée aux 100 autorisées.",
+    "automation": "API documentée avec authentification ; respect du périmètre autorisé et des conditions du plan.",
+    "limitations": "Liste imposée, impossible de sélectionner librement toutes les actions mondiales. Durée ou pérennité du gratuit non explicitée dans ce guide ; options supplémentaires à vérifier.",
+    "priority": "A",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://docs.fiscal.ai/docs/guides/free-trial",
+      "https://docs.fiscal.ai/docs/introduction"
+    ]
+  },
+  {
+    "source": "Alpha Vantage",
+    "category": "API de fondamentaux et cours à petit quota",
+    "geography": "Cours sur de nombreuses places ; fondamentaux disponibles par ticker, couverture internationale détaillée à valider",
+    "free_access": "Clé gratuite durable ; la majorité des jeux est annoncée disponible gratuitement, avec des endpoints explicitement premium.",
+    "auth": "Clé API gratuite après inscription. Le test de l'exemple IBM avec demo n'a renvoyé que l'invitation à demander une clé.",
+    "data": "INCOME_STATEMENT, BALANCE_SHEET, CASH_FLOW annuels/trimestriels ; cours quotidiens bruts. JSON/CSV selon endpoint, documentation anglaise.",
+    "history": "Historique des comptes non garanti uniformément. Quotidien brut gratuit : 100 points en mode compact ; historique quotidien complet et quotidien ajusté premium.",
+    "quota": "25 appels/jour, soit au plus 8 entreprises avec les 3 états chacune avant tout autre appel.",
+    "automation": "API prévue pour scripts ; stockage local et rafraîchissement trimestriel adaptés au petit quota.",
+    "limitations": "Ne pas confondre cours mondiaux et fondamentaux mondiaux complets. Temps réel US premium. Extension de quota pour projets éducatifs/libres seulement après vérification du fournisseur.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.alphavantage.co/support/",
+      "https://www.alphavantage.co/documentation/"
+    ]
+  },
+  {
+    "source": "Finnhub",
+    "category": "Cours américains, ratios et états publiés",
+    "geography": "Gratuit surtout utile aux États-Unis ; couverture mondiale dépendante de l'endpoint et des droits",
+    "free_access": "Plan gratuit officiel. Le schéma public ne marque pas company-basic-financials et financials-reported premium ; stock-candles est explicitement premium.",
+    "auth": "Compte et clé API gratuits nécessaires ; droits exacts à vérifier par endpoint.",
+    "data": "Cotations US, ratios et mesures de base, financials as reported ; JSON, SDK et documentation anglaise. Les états publiés nécessitent une normalisation.",
+    "history": "Profondeur des comptes gratuits à valider avec la clé ; ne pas déduire un historique gratuit de cours OHLCV de la présence de l'endpoint.",
+    "quota": "60 appels/minute sur la grille gratuite officielle ; plafond technique général de 30 appels/seconde.",
+    "automation": "API documentée ; conditions personnelles du plan. Pour cotations continues, la documentation déconseille le polling constant.",
+    "limitations": "Pas de promesse d'états standardisés complets gratuits dans le monde. Cotations internationales temps réel réservées à l'offre Enterprise ; bougies historiques premium.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://finnhub.io/pricing",
+      "https://finnhub.io/docs/api/company-basic-financials",
+      "https://finnhub.io/docs/api/financials-reported",
+      "https://finnhub.io/docs/api/stock-candles",
+      "https://finnhub.io/docs/api/rate-limit",
+      "https://finnhub.io/docs/api/quote"
+    ]
+  },
+  {
+    "source": "Twelve Data",
+    "category": "API de cours et devises",
+    "geography": "Basic : actions/ETF US, devises et crypto ; autres marchés via symboles de démonstration",
+    "free_access": "Basic gratuit ; les fondamentaux et les cours mondiaux de fin de séance sont listés dans un niveau payant.",
+    "auth": "Compte et clé API gratuits.",
+    "data": "Séries de cours US, FX, indicateurs et données de référence ; appels groupés possibles. API JSON/CSV selon endpoint, documentation anglaise.",
+    "history": "Profondeur à vérifier par instrument, intervalle et endpoint ; aucune profondeur mondiale gratuite uniforme établie.",
+    "quota": "8 crédits API/minute et 800/jour. Le regroupement de plusieurs symboles consomme des crédits par symbole et selon le poids de l'endpoint.",
+    "automation": "Basic prévoit un usage interne sans affichage externe ; plan individuel pour usage personnel/interne non commercial.",
+    "limitations": "Les symboles d'essai mondiaux ne donnent pas accès à toutes les actions mondiales. API gratuite de prix ne signifie pas fondamentaux gratuits.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://twelvedata.com/pricing",
+      "https://twelvedata.com/docs"
+    ]
+  },
+  {
+    "source": "Financial Modeling Prep (FMP)",
+    "category": "API de données et fondamentaux sur symboles limités",
+    "geography": "Accès gratuit limité par endpoint et symbole ; couverture mondiale étendue réservée aux offres supérieures",
+    "free_access": "Basic gratuit. Pour de nombreux états financiers, le tableau affiche AAPL, TSLA, AMZN et 84 autres symboles : un échantillon de 87, pas un univers mondial libre.",
+    "auth": "Compte et clé API gratuits.",
+    "data": "Référentiels, profils et cours EOD selon entitlement ; comptes de résultat, bilans et flux sur symboles limités. API JSON, documentation anglaise.",
+    "history": "Le niveau Basic affiche 5 ans ; limites réelles et profondeur à vérifier par endpoint et ticker.",
+    "quota": "250 appels/jour et 500 Mo de bande passante sur 30 jours glissants selon la grille.",
+    "automation": "API autorisée dans le périmètre de l'offre ; affichage ou redistribution externe soumis à un accord de données spécifique.",
+    "limitations": "La mention de plus de 150 endpoints ne vaut pas droit complet à leurs données. Nombreux fondamentaux réservés à une liste limitée ; activation exacte à tester avec une clé.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://site.financialmodelingprep.com/developer/docs/pricing",
+      "https://site.financialmodelingprep.com/developer/docs"
+    ]
+  },
+  {
+    "source": "Stooq",
+    "category": "Téléchargements historiques de cours",
+    "geography": "Plusieurs marchés et classes d'actifs ; couverture exacte à vérifier dans les fichiers",
+    "free_access": "Page officielle de téléchargements historiques gratuits, avec fichiers quotidiens et intrajournaliers.",
+    "auth": "Pas de clé API documentée sur la page observée ; vérification JavaScript du navigateur rencontrée lors de l'accès.",
+    "data": "Fichiers historiques de prix ; aucun ensemble mondial de fondamentaux standardisés gratuits vérifié. Site anglais/polonais.",
+    "history": "Variable selon symbole et archive ; ne pas promettre une durée ou une méthode d'ajustement universelle sans examiner le fichier.",
+    "quota": "Aucun quota officiel chiffré vérifié.",
+    "automation": "Téléchargement de fichiers utile pour initialisation ; fonctionnement autonome et droits d'usage à vérifier. Respecter toute vérification d'accès.",
+    "limitations": "Accès automatique non confirmé ; contrôle navigateur observé. Ce fournisseur de cours ne remplace pas une source de bilans et cash-flow.",
+    "priority": "B",
+    "evidence_status": "needs_account_validation",
+    "urls": [
+      "https://stooq.com/db/h/",
+      "https://stooq.com/q/d/?s=aapl.us",
+      "https://stooq.com/pomoc/"
+    ]
+  },
+  {
+    "source": "Nasdaq Data Link",
+    "category": "Catalogue de jeux de données gratuits et payants",
+    "geography": "Variable selon le producteur ; séries économiques internationales et jeux financiers spécialisés",
+    "free_access": "Certains jeux sont gratuits ; d'autres n'offrent qu'un échantillon. Les bibliothèques clientes gratuites ne rendent pas les jeux commerciaux gratuits.",
+    "auth": "Compte et clé souvent nécessaires ; accès et abonnement à vérifier pour chaque jeu.",
+    "data": "API et outils Python/R/Excel ; exports tabulaires selon jeu. Documentation anglaise.",
+    "history": "Dates, fréquence et fraîcheur propres à chaque jeu. Un ancien exemple de tutoriel ne prouve pas qu'une série continue d'être mise à jour.",
+    "quota": "Quota actuel à vérifier sur le jeu et le compte ; anciennes limites de documentation non reprises faute de validation actuelle.",
+    "automation": "API prévue pour extraction avec les droits du jeu ; licence et éventuelles limites d'export distinctes par producteur.",
+    "limitations": "Pas de source unique mondiale de fondamentaux gratuite vérifiée. Plusieurs anciennes URL de documentation sont désormais indisponibles ; vérifier les pages actuelles du catalogue.",
+    "priority": "C",
+    "evidence_status": "needs_account_validation",
+    "urls": [
+      "https://data.nasdaq.com/publishers/QDL",
+      "https://data.nasdaq.com/databases/SF1",
+      "https://data.nasdaq.com/databases/SEP",
+      "https://data.nasdaq.com/search?filters=%5B%22Free%22%5D"
+    ]
+  },
+  {
+    "source": "Financial Datasets (financialdatasets.ai)",
+    "category": "API de données financières commerciale",
+    "geography": "Couverture mondiale annoncée dans l'offre commerciale",
+    "free_access": "Aucun forfait gratuit permanent publié sur la grille tarifaire actuelle consultée ; ne pas le budgéter comme source à coût nul.",
+    "auth": "Compte et clé API ; le démarrage rapide exige une clé dans chaque requête.",
+    "data": "Fondamentaux, cours, dépôts SEC, données de sociétés et screener. Documentation et exemples Python/JavaScript en anglais.",
+    "history": "Historique étendu annoncé pour les offres commerciales ; aucun historique gratuit général établi.",
+    "quota": "Aucun quota gratuit permanent vérifié ; tarification en crédits ou abonnement.",
+    "automation": "API documentée mais accès dépendant des crédits et droits du compte.",
+    "limitations": "Distinguer cette société de la SEC, qui publie directement des données gratuites. Anciennes présentations de gratuité ou exemples ne prouvent pas l'offre actuelle.",
+    "priority": "C",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.financialdatasets.ai/pricing",
+      "https://docs.financialdatasets.ai/quickstart",
+      "https://docs.financialdatasets.ai/introduction"
+    ]
+  },
+  {
+    "source": "FinancialJuice",
+    "category": "Actualité et calendrier économique",
+    "geography": "Actualités macroéconomiques et marchés internationaux",
+    "free_access": "Actualités consultables et lien RSS officiel ; aucune API gratuite de fondamentaux ou de cours structurés identifiée.",
+    "auth": "Lecture de certaines pages publiques ; produits et accès supplémentaires selon compte.",
+    "data": "Nouvelles financières et contexte macroéconomique en anglais ; pas de bilan ou de tableau de flux comparable à une API de fondamentaux.",
+    "history": "Archivage gratuit exploitable par API non vérifié.",
+    "quota": "Aucun quota d'API gratuite publique vérifié.",
+    "automation": "CGU interdisant collecte/agrégation et robots sans autorisation écrite ; ne pas intégrer automatiquement par défaut, malgré le lien RSS.",
+    "limitations": "Complément de lecture, pas une source principale pour calculer croissance, dette, rentabilité ou cash-flow.",
+    "priority": "C",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.financialjuice.com/home",
+      "https://www.financialjuice.com/tos.aspx"
+    ]
+  },
+  {
+    "source": "OpenBB",
+    "category": "Outil d'intégration ; pas un fournisseur de données",
+    "geography": "Dépend entièrement des fournisseurs installés",
+    "free_access": "Outils ouverts pour appeler plusieurs fournisseurs depuis Python, REST ou MCP ; ne confèrent aucun abonnement de données.",
+    "auth": "Clés des fournisseurs nécessaires lorsque leurs API en exigent.",
+    "data": "Interface commune à des extensions et fournisseurs ; formats de sortie et conversions utiles à un bot. Documentation anglaise.",
+    "history": "Dépend de chaque fournisseur et de son plan.",
+    "quota": "Quotas des fournisseurs conservés ; pas de quota gratuit global ajouté par OpenBB.",
+    "automation": "Prévu pour appels programmatiques et serveurs ; respecter les droits et limites de chaque source sous-jacente.",
+    "limitations": "Ne résout ni une profondeur historique insuffisante, ni les restrictions commerciales, ni l'absence de couverture mondiale gratuite.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://docs.openbb.co/odp/python/quickstart",
+      "https://github.com/OpenBB-finance/OpenBB"
+    ]
+  }
+]

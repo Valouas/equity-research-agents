@@ -1,0 +1,29 @@
+[
+  {
+    "source": "Nestlé — compte de résultat annuel 2025 XLSX",
+    "url": "https://www.nestle.com/sites/default/files/2026-02/full-year-income-statement-2025.xlsx",
+    "tested_at_utc": "2026-10-06T17:12:47.579392+00:00",
+    "authentication": "Aucune",
+    "test_scope": "Un document proposé au téléchargement par le site officiel, sans collecte massive",
+    "http_status": 200,
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "bytes": 15912,
+    "sha256": "79bbc2c9c7321c11f4aac88b5569c94e388e1b2c91359cbc077e2a4c76619435",
+    "worksheets": [
+      {
+        "name": "Income Statement 2025",
+        "rows": 39,
+        "columns": 4
+      }
+    ],
+    "sales_row": [
+      [
+        "Sales",
+        "3",
+        "89490",
+        "91354"
+      ]
+    ],
+    "result": "Le fichier XLSX officiel est accessible et lisible automatiquement."
+  }
+]

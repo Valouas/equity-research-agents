@@ -1,0 +1,379 @@
+{
+  "tested_at_utc": "2026-10-06T17:08:47.384293+00:00",
+  "user_agent": "StockResearchBot/0.1 (public-data evaluation; no contact address configured)",
+  "max_requests_per_second": 1.5,
+  "results": [
+    {
+      "name": "sec_companyfacts_apple",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 3789099,
+      "server_date": "Tue, 06 Oct 2026 17:08:55 GMT",
+      "entity": "Apple Inc.",
+      "namespaces": [
+        "dei",
+        "us-gaap"
+      ],
+      "tags": {
+        "dei": 2,
+        "us-gaap": 503
+      },
+      "selected_concepts": {
+        "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax": [
+          {
+            "unit": "USD",
+            "annual_fact_count": 37,
+            "latest_two": [
+              {
+                "start": "2023-10-01",
+                "end": "2024-09-28",
+                "val": 391035000000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31",
+                "frame": "CY2024"
+              },
+              {
+                "start": "2024-09-29",
+                "end": "2025-09-27",
+                "val": 416161000000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31",
+                "frame": "CY2025"
+              }
+            ]
+          }
+        ],
+        "us-gaap:NetIncomeLoss": [
+          {
+            "unit": "USD",
+            "annual_fact_count": 139,
+            "latest_two": [
+              {
+                "start": "2023-10-01",
+                "end": "2024-09-28",
+                "val": 93736000000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31",
+                "frame": "CY2024"
+              },
+              {
+                "start": "2024-09-29",
+                "end": "2025-09-27",
+                "val": 112010000000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31",
+                "frame": "CY2025"
+              }
+            ]
+          }
+        ],
+        "us-gaap:CommonStockSharesOutstanding": [
+          {
+            "unit": "shares",
+            "annual_fact_count": 34,
+            "latest_two": [
+              {
+                "end": "2024-09-28",
+                "val": 15116786000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31",
+                "frame": "CY2024Q3I"
+              },
+              {
+                "end": "2025-09-27",
+                "val": 14773260000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31"
+              }
+            ]
+          }
+        ],
+        "dei:EntityCommonStockSharesOutstanding": [
+          {
+            "unit": "shares",
+            "annual_fact_count": 17,
+            "latest_two": [
+              {
+                "end": "2024-10-18",
+                "val": 15115823000,
+                "accn": "0000320193-24-000123",
+                "fy": 2024,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2024-11-01",
+                "frame": "CY2024Q3I"
+              },
+              {
+                "end": "2025-10-17",
+                "val": 14776353000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31",
+                "frame": "CY2025Q3I"
+              }
+            ]
+          }
+        ],
+        "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding": [
+          {
+            "unit": "shares",
+            "annual_fact_count": 51,
+            "latest_two": [
+              {
+                "start": "2023-10-01",
+                "end": "2024-09-28",
+                "val": 15408095000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31",
+                "frame": "CY2024"
+              },
+              {
+                "start": "2024-09-29",
+                "end": "2025-09-27",
+                "val": 15004697000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31",
+                "frame": "CY2025"
+              }
+            ]
+          }
+        ],
+        "us-gaap:CommonStockDividendsPerShareCashPaid": [
+          {
+            "unit": "USD/shares",
+            "annual_fact_count": 0,
+            "latest_two": []
+          }
+        ],
+        "us-gaap:PaymentsOfDividendsCommonStock": [
+          {
+            "unit": "USD",
+            "annual_fact_count": 10,
+            "latest_two": [
+              {
+                "start": "2016-09-25",
+                "end": "2017-09-30",
+                "val": 12563000000,
+                "accn": "0000320193-17-000070",
+                "fy": 2017,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2017-11-03"
+              },
+              {
+                "start": "2017-07-02",
+                "end": "2017-09-30",
+                "val": 3252000000,
+                "accn": "0000320193-17-000070",
+                "fy": 2017,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2017-11-03"
+              }
+            ]
+          }
+        ],
+        "us-gaap:PaymentsOfDividends": [
+          {
+            "unit": "USD",
+            "annual_fact_count": 68,
+            "latest_two": [
+              {
+                "start": "2023-10-01",
+                "end": "2024-09-28",
+                "val": 15234000000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31",
+                "frame": "CY2024"
+              },
+              {
+                "start": "2024-09-29",
+                "end": "2025-09-27",
+                "val": 15421000000,
+                "accn": "0000320193-25-000079",
+                "fy": 2025,
+                "fp": "FY",
+                "form": "10-K",
+                "filed": "2025-10-31",
+                "frame": "CY2025"
+              }
+            ]
+          }
+        ]
+      },
+      "elapsed_seconds": 8.694
+    },
+    {
+      "name": "sec_submissions_apple",
+      "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 163743,
+      "server_date": "Tue, 06 Oct 2026 17:09:03 GMT",
+      "entity": "Apple Inc.",
+      "tickers": [
+        "AAPL"
+      ],
+      "exchanges": [
+        "Nasdaq"
+      ],
+      "recent_forms": {
+        "4": 597,
+        "144": 49,
+        "3": 12,
+        "8-K/A": 2,
+        "10-Q": 33,
+        "8-K": 102,
+        "SD": 11,
+        "SCHEDULE 13G": 1,
+        "SCHEDULE 13G/A": 2,
+        "PX14A6G": 27,
+        "DEFA14A": 12,
+        "DEF 14A": 11,
+        "25-NSE": 4,
+        "10-K": 11,
+        "144/A": 1,
+        "S-8": 4,
+        "424B2": 42,
+        "FWP": 21,
+        "S-3ASR": 4,
+        "5": 1,
+        "UPLOAD": 3,
+        "CORRESP": 3,
+        "SC 13G/A": 22,
+        "4/A": 1,
+        "S-8 POS": 3,
+        "PX14A6N": 1,
+        "IRANNOTICE": 2,
+        "CERT": 2,
+        "8-A12B": 4,
+        "3/A": 1,
+        "25": 1,
+        "SC 13G": 1,
+        "CERTNYS": 2,
+        "NO ACT": 7
+      },
+      "recent_filing_count": 1000,
+      "older_files": [
+        {
+          "name": "CIK0000320193-submissions-001.json",
+          "filingCount": 1264,
+          "filingFrom": "1994-01-26",
+          "filingTo": "2015-09-15"
+        }
+      ],
+      "elapsed_seconds": 7.118
+    },
+    {
+      "name": "nasdaq_symbols",
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 349903,
+      "server_date": "Tue, 06 Oct 2026 17:09:12 GMT",
+      "rows": 5636,
+      "columns": [
+        "Symbol",
+        "Security Name",
+        "Market Category",
+        "Test Issue",
+        "Financial Status",
+        "Round Lot Size",
+        "ETF",
+        "NextShares"
+      ],
+      "etf_count": 1293,
+      "test_issue_count": 8,
+      "timestamp": "File Creation Time: 1006202612:11|||||||",
+      "apple": {
+        "Symbol": "AAPL",
+        "Security Name": "Apple Inc. - Common Stock",
+        "Market Category": "Q",
+        "Test Issue": "N",
+        "Financial Status": "N",
+        "Round Lot Size": "40",
+        "ETF": "N",
+        "NextShares": "N"
+      },
+      "elapsed_seconds": 11.275
+    },
+    {
+      "name": "ecb_usd_chf",
+      "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD+CHF.EUR.SP00.A?lastNObservations=2&format=csvdata",
+      "status": 200,
+      "content_type": "text/csv",
+      "bytes": 1166,
+      "server_date": "Tue, 06 Oct 2026 17:09:21 GMT",
+      "observations": [
+        {
+          "KEY": "EXR.D.CHF.EUR.SP00.A",
+          "TIME_PERIOD": "2026-10-05",
+          "OBS_VALUE": "0.9311",
+          "CURRENCY": "CHF",
+          "CURRENCY_DENOM": "EUR",
+          "UNIT": "CHF",
+          "UNIT_MULT": "0"
+        },
+        {
+          "KEY": "EXR.D.CHF.EUR.SP00.A",
+          "TIME_PERIOD": "2026-10-06",
+          "OBS_VALUE": "0.9359",
+          "CURRENCY": "CHF",
+          "CURRENCY_DENOM": "EUR",
+          "UNIT": "CHF",
+          "UNIT_MULT": "0"
+        },
+        {
+          "KEY": "EXR.D.USD.EUR.SP00.A",
+          "TIME_PERIOD": "2026-10-05",
+          "OBS_VALUE": "1.1204",
+          "CURRENCY": "USD",
+          "CURRENCY_DENOM": "EUR",
+          "UNIT": "USD",
+          "UNIT_MULT": "0"
+        },
+        {
+          "KEY": "EXR.D.USD.EUR.SP00.A",
+          "TIME_PERIOD": "2026-10-06",
+          "OBS_VALUE": "1.1269",
+          "CURRENCY": "USD",
+          "CURRENCY_DENOM": "EUR",
+          "UNIT": "USD",
+          "UNIT_MULT": "0"
+        }
+      ],
+      "rows": 4,
+      "elapsed_seconds": 6.989
+    }
+  ]
+}

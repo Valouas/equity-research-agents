@@ -1,0 +1,179 @@
+{
+  "timestamp": "2026-10-06T17:08:47.384293+00:00",
+  "method": "4 requêtes HTTPS documentées, séquentielles, sans clé/compte. Limiteur à environ 1,5 requête/seconde ; aucune nouvelle tentative ni contournement. Le User-Agent est transparent et ne contient pas de faux contact.",
+  "user_agent": "StockResearchBot/0.1 (public-data evaluation; no contact address configured)",
+  "endpoint_count": 4,
+  "successful_http_200": 4,
+  "results": [
+    {
+      "name": "sec_companyfacts_apple",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 3789099,
+      "server_date": "Tue, 06 Oct 2026 17:08:55 GMT",
+      "elapsed_seconds": 8.694,
+      "observations": {
+        "company": "Apple Inc.",
+        "tags": {
+          "dei": 2,
+          "us-gaap": 503
+        },
+        "annual_example": {
+          "period_start": "2024-09-29",
+          "period_end": "2025-09-27",
+          "filing_date": "2025-10-31",
+          "accession": "0000320193-25-000079",
+          "revenue_USD": 416161000000,
+          "net_income_USD": 112010000000
+        },
+        "shares_distinct_measures": [
+          {
+            "tag": "us-gaap:CommonStockSharesOutstanding",
+            "instant_date": "2025-09-27",
+            "shares": 14773260000,
+            "meaning": "Actions à la fin de cet exercice, contexte et classe à vérifier pour chaque émetteur."
+          },
+          {
+            "tag": "dei:EntityCommonStockSharesOutstanding",
+            "instant_date": "2025-10-17",
+            "shares": 14776353000,
+            "meaning": "Date de couverture du rapport, différente de la fin de l’exercice."
+          },
+          {
+            "tag": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+            "period_start": "2024-09-29",
+            "period_end": "2025-09-27",
+            "shares": 15004697000,
+            "meaning": "Moyenne diluée sur la période, différente du nombre instantané."
+          }
+        ],
+        "dividend_example": {
+          "common_dividends_declared_per_share_USD": 1.02,
+          "declared_tag": "us-gaap:CommonStockDividendsPerShareDeclared",
+          "generic_dividends_paid_USD": 15421000000,
+          "generic_paid_tag": "us-gaap:PaymentsOfDividends",
+          "latest_end_found_in_annual_filing_for_common_stock_payments_tag": "2017-09-30",
+          "warning": "PaymentsOfDividends couvre aussi préférentielles et participations ne donnant pas contrôle. Un tag absent/récent non renseigné n’est pas un zéro. Déclaré et payé sont distincts."
+        },
+        "fy_warning": "Le 10-K FY2025 inclut aussi des faits 2024 avec fy=2025. Reconstruire l’exercice depuis start/end et conserver filed/accn. Les faits contenus dans un 10-K ne sont pas tous annuels."
+      }
+    },
+    {
+      "name": "sec_submissions_apple",
+      "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 163743,
+      "server_date": "Tue, 06 Oct 2026 17:09:03 GMT",
+      "elapsed_seconds": 7.118,
+      "observations": {
+        "company": "Apple Inc.",
+        "tickers": [
+          "AAPL"
+        ],
+        "exchanges": [
+          "Nasdaq"
+        ],
+        "recent_filing_count": 1000,
+        "recent_form4_count": 597,
+        "recent_form10k_count": 11,
+        "older_files": [
+          {
+            "name": "CIK0000320193-submissions-001.json",
+            "filingCount": 1264,
+            "filingFrom": "1994-01-26",
+            "filingTo": "2015-09-15"
+          }
+        ]
+      }
+    },
+    {
+      "name": "nasdaq_symbols",
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 349903,
+      "server_date": "Tue, 06 Oct 2026 17:09:12 GMT",
+      "elapsed_seconds": 11.275,
+      "observations": {
+        "rows": 5636,
+        "columns": [
+          "Symbol",
+          "Security Name",
+          "Market Category",
+          "Test Issue",
+          "Financial Status",
+          "Round Lot Size",
+          "ETF",
+          "NextShares"
+        ],
+        "etf_count": 1293,
+        "test_issue_count": 8,
+        "timestamp": "File Creation Time: 1006202612:11|||||||",
+        "apple": {
+          "Symbol": "AAPL",
+          "Security Name": "Apple Inc. - Common Stock",
+          "Market Category": "Q",
+          "Test Issue": "N",
+          "Financial Status": "N",
+          "Round Lot Size": "40",
+          "ETF": "N",
+          "NextShares": "N"
+        },
+        "warning": "Nombre de lignes du répertoire ≠ nombre de sociétés/actions ordinaires. otherlisted.txt documenté mais pas testé."
+      }
+    },
+    {
+      "name": "ecb_usd_chf",
+      "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD+CHF.EUR.SP00.A?lastNObservations=2&format=csvdata",
+      "status": 200,
+      "content_type": "text/csv",
+      "bytes": 1166,
+      "server_date": "Tue, 06 Oct 2026 17:09:21 GMT",
+      "elapsed_seconds": 6.989,
+      "observations": {
+        "rows": 4,
+        "values": [
+          {
+            "KEY": "EXR.D.CHF.EUR.SP00.A",
+            "TIME_PERIOD": "2026-10-05",
+            "OBS_VALUE": "0.9311",
+            "CURRENCY": "CHF",
+            "CURRENCY_DENOM": "EUR",
+            "UNIT": "CHF",
+            "UNIT_MULT": "0"
+          },
+          {
+            "KEY": "EXR.D.CHF.EUR.SP00.A",
+            "TIME_PERIOD": "2026-10-06",
+            "OBS_VALUE": "0.9359",
+            "CURRENCY": "CHF",
+            "CURRENCY_DENOM": "EUR",
+            "UNIT": "CHF",
+            "UNIT_MULT": "0"
+          },
+          {
+            "KEY": "EXR.D.USD.EUR.SP00.A",
+            "TIME_PERIOD": "2026-10-05",
+            "OBS_VALUE": "1.1204",
+            "CURRENCY": "USD",
+            "CURRENCY_DENOM": "EUR",
+            "UNIT": "USD",
+            "UNIT_MULT": "0"
+          },
+          {
+            "KEY": "EXR.D.USD.EUR.SP00.A",
+            "TIME_PERIOD": "2026-10-06",
+            "OBS_VALUE": "1.1269",
+            "CURRENCY": "USD",
+            "CURRENCY_DENOM": "EUR",
+            "UNIT": "USD",
+            "UNIT_MULT": "0"
+          }
+        ],
+        "warning": "Valeurs exprimées en CHF ou USD par EUR, taux de référence. Aucun cours d’action."
+      }
+    }
+  ]
+}

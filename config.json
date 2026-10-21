@@ -1,0 +1,32 @@
+{
+  "market_scope": "global",
+  "exchanges": null,
+  "exclude_venues": ["OTC", "PINK"],
+  "max_symbols_per_run": 3000,
+  "api_units_per_run": 35000,
+  "api_units_per_day": 90000,
+  "min_request_interval": 0.3,
+  "cache_ttl_hours": 20,
+  "refresh_universe_days": 7,
+  "results_max_age_days": 7,
+  "priority_symbols": [],
+  "top_n": 20,
+  "daily_time": "23:15",
+  "timezone": "Europe/Zurich",
+  "scoring": {
+    "min_coverage_pct": 75,
+    "max_financial_age_days": 550,
+    "max_snapshot_age_days": 14
+  },
+  "agents": {
+    "backend": "rules",
+    "model": "",
+    "base_url": "http://127.0.0.1:11434",
+    "max_llm_companies": 3,
+    "max_calls_per_run": 48,
+    "timeout_seconds": 60,
+    "min_shortlist_score": 75,
+    "min_shortlist_coverage_pct": 85,
+    "max_document_age_days": 550
+  }
+}

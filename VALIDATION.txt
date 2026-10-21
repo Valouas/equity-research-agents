@@ -1,0 +1,51 @@
+VALIDATION — BOT DE RECHERCHE ACTIONS MULTIAGENT V0.2
+Validation exécutée le 2026-10-06T17:52:19+00:00
+
+Résultat global : 167 tests automatisés, zéro échec, zéro erreur.
+Commande : python -m unittest discover -s tests
+Python de validation : 3.12 (code destiné à Python 3.10+ ; autres versions non exécutées ici).
+
+PÉRIMÈTRE
+- 97 tests de compatibilité conservés : moteur financier, normalisation du fournisseur,
+  cache/quotas, rapports, historique et exécution.
+- 70 nouveaux tests : client local et JSON Schema (20), cas adversariaux multiagents (28),
+  rapports multiagents (11), intégration du protocole Ollama (4), entrées et CLI (7).
+- Le mode --sample a été exécuté de bout en bout, sans source de données réseau.
+- Le fichier examples/companies_synthetic.json a été exécuté avec --input.
+- Les quatre issues de recherche sont illustrées : shortlist, watch, avoid, abstain.
+
+CAS FINANCIERS ET D'ORCHESTRATION CONTRÔLÉS
+Trois exercices valides minimum, doublons, périodes manquantes, dates futures/périmées,
+fraîcheur du fournisseur, devises, données manquantes et nombres non finis, valorisation
+inexploitable, secteurs nécessitant un modèle spécialisé, trésorerie libre négative
+malgré un score élevé, réserves documentaires/contradictoires, références inventées ou
+issues d'un autre dossier, réponse hors schéma, action non autorisée, échecs d'agents,
+quotas et suspension d'une ancienne décision en cache.
+
+PROTOCOLE OLLAMA — TRANSPORT SIMULÉ UNIQUEMENT
+Le vrai OllamaClient et le vrai orchestrateur exécutent le protocole complet avec un
+transport de test, sans connexion : sept rôles puis le décideur, huit réponses synthétiques
+acceptées. Les schémas et identifiants proviennent des vrais dossiers de test.
+Les corps de requête standards sont sous la limite de 65 536 octets ; des dossiers très
+longs sont refusés avant envoi et provoquent une abstention explicite. Le budget de trois
+appels est respecté. Ces tests ne sont pas des inférences d'un modèle réel.
+
+EXEMPLE LIVRÉ
+example_report/report.html, report.csv, results.json : données, sociétés et extraits
+entièrement fictifs. Les résultats proviennent du moteur par règles. Aucun modèle IA
+n'a produit le texte de cet exemple pendant l'exécution du bot.
+
+LIMITES DE VALIDATION
+Aucun serveur Ollama installé ou démarré, aucun poids téléchargé, aucune inférence réelle.
+Aucun scan mondial réel lancé dans cette V0.2, aucune évaluation de performance boursière,
+aucun backtest de rendement. Les sources gratuites recensées précédemment ne sont pas
+toutes connectées : l'entrée JSON normalisée permet d'apporter leurs données et leurs
+extraits, et le connecteur EODHD existant reste optionnel selon ses droits d'accès.
+Aucun ordre, transaction, déploiement permanent ou message Telegram n'a été envoyé.
+La validation des références et du JSON ne prouve pas la vérité d'une interprétation IA.
+
+FONCTIONNEMENT RÉEL À ACTIVER LOCALEMENT
+Choisir et installer un modèle adapté au matériel, configurer Ollama en mode local
+seulement (OLLAMA_NO_CLOUD=1 sur le serveur, puis redémarrage), fournir des données réelles
+normalisées et datées, puis lancer le bot. Une relecture quotidienne de --input ne met
+pas elle-même à jour le fichier source : sa collecte doit être alimentée séparément.

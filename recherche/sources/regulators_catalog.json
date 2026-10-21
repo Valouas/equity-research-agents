@@ -1,0 +1,302 @@
+[
+  {
+    "source": "XBRL International — filings.xbrl.org",
+    "category": "Fondamentaux structurés et rapports ESEF",
+    "geography": "Europe, Royaume-Uni et Ukraine ; couverture partielle par pays",
+    "free_access": "API publique et fichiers gratuits, sans abonnement. Service de XBRL International alimenté par des sources nationales officielles ; ce n'est pas un régulateur.",
+    "auth": "Aucune clé ni inscription pour l'API et les fichiers testés.",
+    "data": "Index de dépôts et entités/LEI, dates de clôture, liens vers rapports XHTML/iXBRL, paquets ZIP, faits xBRL-JSON et messages de validation.",
+    "history": "Dépend des dépôts ESEF/UKSEF disponibles dans chaque pays ; aucune profondeur identique garantie pour toutes les entreprises. Plusieurs exercices disponibles.",
+    "quota": "Documentation : pagination, exemple page[size]=200 ; aucun quota fixe garanti. L'opérateur peut limiter ou retirer l'accès.",
+    "automation": "API JSON:API officiellement documentée, filtres pays, tri processed, relations entités ; téléchargement des fichiers JSON/ZIP indiqué par chaque dépôt. Test réel : une fiche puis son fichier de 375 faits, HTTP 200.",
+    "limitations": "Couverture incomplète, Allemagne et Irlande explicitement absentes de la collecte fiable. Formats et langues variés, extensions de taxonomie, doublons/amendements et erreurs XBRL. Les dates d'ajout/traitement peuvent être postérieures au dépôt officiel. Le rapport de test comporte 45 erreurs de validation. Pas de garantie de justesse ni de cours de bourse.",
+    "priority": "A",
+    "evidence_status": "live_tested",
+    "urls": [
+      "https://filings.xbrl.org/docs/api",
+      "https://filings.xbrl.org/docs/about",
+      "https://filings.xbrl.org/source",
+      "https://www.esma.europa.eu/issuer-disclosure/electronic-reporting"
+    ]
+  },
+  {
+    "source": "France — DILA / AMF Info-financiere",
+    "category": "Dépôts réglementés, métadonnées et rapports",
+    "geography": "France : informations réglementées des sociétés cotées relevant du dispositif français",
+    "free_access": "API en accès libre et jeu publié sous Licence Ouverte. L'accès aux listes et documents ne nécessite pas d'API commerciale.",
+    "auth": "Aucune clé pour l'appel public testé, qui a renvoyé une notice JSON.",
+    "data": "Rapports annuels/semestriels, informations trimestrielles, rachats d'actions, nombres d'actions/droits de vote, communiqués ; métadonnées de société, ISIN, LEI, dates, langue et URL de récupération. Rapports dans le format d'origine.",
+    "history": "Archive nationale créée en 2009 ; profondeur effective à vérifier par émetteur et catégorie. ESEF obligatoire en France pour les exercices ouverts à partir du 1er janvier 2021.",
+    "quota": "Fiche officielle data.gouv.fr : 10 000 appels API par adresse IP et par jour ; disponibilité non garantie.",
+    "automation": "API Explore documentée, exports de métadonnées CSV/JSON/Excel/Parquet et flux XML officiel. Appel v2.1 /catalog/datasets/flux-amf-new-prod/records?limit=1 testé HTTP 200. Extraction financière ensuite depuis le document/XBRL.",
+    "limitations": "Une notice n'est pas un jeu de ratios ou de comptes normalisés. Variantes de rapports, amendements, langue de l'émetteur et éventuels documents indisponibles. Préserver la date de publication et le document source ; données personnelles soumises aux règles de réutilisation.",
+    "priority": "A",
+    "evidence_status": "live_tested",
+    "urls": [
+      "https://www.data.gouv.fr/dataservices/api-info-financiere",
+      "https://www.data.gouv.fr/datasets/info-financiere",
+      "https://info-financiere.gouv.fr/explore/dataset/flux-amf-new-prod/api/",
+      "https://www.info-financiere.gouv.fr/api-console/explore/v2.1/",
+      "https://www.amf-france.org/fr/actualites-publications/dossiers-thematiques/esef"
+    ]
+  },
+  {
+    "source": "France — INPI / Registre national des entreprises",
+    "category": "Comptes annuels structurés et PDF",
+    "geography": "Entreprises françaises ; comptes déposés non confidentiels",
+    "free_access": "INPI annonce gratuitement les données RNE par API/SFTP. La licence RNE actuelle autorise la réutilisation gratuite commerciale et non commerciale avec attribution de la source et de sa mise à jour.",
+    "auth": "Compte gratuit nécessaire, activation des accès API/SFTP ; login API par identifiant/mot de passe, puis jeton Bearer. Aucun compte créé dans cette recherche.",
+    "data": "Bilans saisis JSON et documents PDF : actifs/passifs, compte de résultat, immobilisations, amortissements/provisions ; métadonnées SIREN, dates d'exercice et dépôt, devise, confidentialité, suppressions. Documentation v6 de septembre 2026 distingue types de comptes, dont consolidés.",
+    "history": "Comptes annuels non confidentiels déposés depuis le 1er janvier 2017 ; mise à jour annoncée quotidienne.",
+    "quota": "Aucun plafond chiffré confirmé dans la documentation comptes v6 consultée. Utiliser les accès différentiels/SFTP prévus, sans supposer un débit illimité.",
+    "automation": "REST documenté : /api/companies/{siren}/attachments, /api/bilans-saisis/{id}, récupération PDF et recherche différentielle. Voie SFTP également annoncée.",
+    "limitations": "Données d'entités juridiques : vérifier qu'il s'agit du groupe consolidé utile à l'action. Confidentialité, comptes simplifiés et non-saisie créent des lacunes. Respecter deleted et retirer les documents supprimés. Codes de liasses français à mapper ; pas de cours ni de multiples boursiers.",
+    "priority": "B",
+    "evidence_status": "needs_account_validation",
+    "urls": [
+      "https://data.inpi.fr/content/editorial/Acces_API_Entreprises",
+      "https://www.inpi.fr/sites/default/files/2026-09/documentation%20technique%20API_comptes_annuels%20v6-1-AA.pdf",
+      "https://data.inpi.fr/content/editorial/licences_reutilisation_donnees_inpi",
+      "https://www.inpi.fr/sites/default/files/2026-10/Licence%20donne%CC%81es%20RNE_2026.pdf"
+    ]
+  },
+  {
+    "source": "Royaume-Uni — FCA National Storage Mechanism",
+    "category": "Rapports financiers réglementés",
+    "geography": "Émetteurs soumis aux obligations britanniques de dépôt",
+    "free_access": "Recherche, lecture et téléchargement des documents gratuits. Page FCA actuelle : rapports balisés téléchargeables dans leur format d'origine, en JSON et en CSV.",
+    "auth": "Consultation publique sans compte de déposant. Le système ESS et les accès PIP concernent la soumission de documents.",
+    "data": "Rapports financiers annuels, autres publications réglementées, LEI/émetteur/dates ; visualiseur iXBRL et faits balisés JSON/CSV annoncés en 2026.",
+    "history": "NSM actuel depuis avril 2020 ; ancien NSM Morningstar couvrant 2009 au 5 avril 2020 accessible selon la procédure FCA. Rapports annuels structurés obligatoires pour exercices ouverts à partir du 1er janvier 2021.",
+    "quota": "Aucun quota de lecture ou API publique de consultation vérifié. Exports de recherches CSV documentés.",
+    "automation": "Téléchargement et exports publics documentés ; récupération automatisée à privilégier via filings.xbrl.org lorsqu'un dépôt y figure. L'API PIP annoncée dans la page NSM est une API de dépôt et ne prouve pas une API publique de collecte.",
+    "limitations": "Le NSM ne garantit pas le temps réel ; émetteurs responsables de l'exhaustivité et de la publication. La présence de données JSON/CSV ne constitue pas une autorisation générale de scraping massif. Données essentiellement annuelles et balisage à valider.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.fca.org.uk/markets/primary-markets/regulatory-disclosures/national-storage-mechanism",
+      "https://www.fca.org.uk/publication/primary-market/nsm-investor-user-guide.pdf",
+      "https://www.fca.org.uk/markets/filing-structured-annual-financial-reports"
+    ]
+  },
+  {
+    "source": "Royaume-Uni — Companies House",
+    "category": "Comptes d'entreprises et identité juridique",
+    "geography": "Entreprises enregistrées au Royaume-Uni, cotées ou non",
+    "free_access": "Free Accounts Data Product : fichiers gratuits de comptes électroniques iXBRL/XBRL. Données de base des entreprises également disponibles en CSV.",
+    "auth": "Fichiers publics sans clé ; pour API, inscription développeur et clé HTTP Basic. Compte non créé/testé ici.",
+    "data": "Comptes électroniques individuels au format iXBRL HTML/XBRL XML dans ZIP ; métadonnées d'entreprise et historique de dépôts par API, documents associés.",
+    "history": "Archives de comptes électroniques depuis 2008 ; fichiers mensuels historiques et fichiers quotidiens. Seuls les dépôts électroniques sont inclus dans ce produit.",
+    "quota": "API : 600 requêtes par période de 5 minutes, 429 en cas de dépassement. Archives bulk distinctes ; aucun débit illimité annoncé.",
+    "automation": "Téléchargements bulk quotidiens/mensuels officiellement prévus ; API de consultation documentée. Pour un univers large, traiter les ZIP évite un appel par document.",
+    "limitations": "Beaucoup de sociétés privées et comptes simplifiés/abrégés ; la bonne entité consolidante doit être identifiée. Les données financières ne sont pas un ensemble prêt à l'emploi de ratios pour toutes les actions. Taille élevée des archives, support non fourni pour ce produit. Respecter les conditions de réutilisation du service et des documents.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://download.companieshouse.gov.uk/en_accountsdata.html",
+      "https://download.companieshouse.gov.uk/historicmonthlyaccountsdata.html",
+      "https://developer.company-information.service.gov.uk/developer-guidelines/",
+      "https://developer.company-information.service.gov.uk/authentication",
+      "https://developer.company-information.service.gov.uk/get-started"
+    ]
+  },
+  {
+    "source": "Japon — FSA EDINET API v2",
+    "category": "Rapports réglementés et fondamentaux XBRL",
+    "geography": "Émetteurs déposant auprès de l'autorité japonaise FSA",
+    "free_access": "EDINET est un dispositif public gratuit d'accès aux déclarations ; l'API documentée permet leur récupération. Aucun tarif d'API annoncé dans les spécifications publiques consultées.",
+    "auth": "Inscription et clé Subscription-Key obligatoires en API v2 ; authentification multifacteur pour le compte. Création de compte et fonctionnement avec clé non testés.",
+    "data": "Listes quotidiennes JSON de dépôts et métadonnées ; rapports annuels, semestriels/trimestriels et amendements ; paquets XBRL/HTML/annexes ZIP, PDF, documents anglais lorsqu'ils existent, CSV converti du XBRL si csvFlag=1.",
+    "history": "Requête de liste jusqu'à 10 ans en arrière ; disponibilité réelle soumise à la période de consultation du type de rapport. Ne pas assimiler le début du XBRL en 2008 à un historique API intégral depuis 2008.",
+    "quota": "FAQ : interroger la liste au plus environ une fois par minute, fréquence de mise à jour. Limites de charge possibles et HTTP 429 ; aucun quota fixe garanti confirmé.",
+    "automation": "API v2 officielle : documents.json?date=YYYY-MM-DD&type=2 puis documents/{docID}. Spécifications mises à jour le 3 juin 2026 ; méthode documentée pour collecter beaucoup de XBRL.",
+    "limitations": "Documentation détaillée surtout en japonais ; anglais volontaire et incomplet. Taxonomie EDINET, consolidé/social, amendements/retraits et périodes à traiter. Fichiers non encore répliqués temporairement ; pas de cours actualisés ni de ratios boursiers.",
+    "priority": "A",
+    "evidence_status": "needs_account_validation",
+    "urls": [
+      "https://disclosure2.edinet-fsa.go.jp/WEEK0020.aspx",
+      "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/WEEK0060.html",
+      "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/download/ESE140206.pdf",
+      "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/WZEK0090_001.html",
+      "https://www.fsa.go.jp/common/budget/kourituka/03_h31/process/03_r01_08.pdf"
+    ]
+  },
+  {
+    "source": "Japon — JPX J-Quants Free",
+    "category": "Cours retardés, résumés financiers et valorisation",
+    "geography": "Actions japonaises couvertes par JPX",
+    "free_access": "Plan Free à 0 yen, compte gratuit et sans carte bancaire. Conditions vérifiées sur la page officielle actuelle en octobre 2026.",
+    "auth": "Compte utilisateur gratuit et clé API v2 dans l'en-tête x-api-key ; authentification v1 par jeton remplacée. Compte non créé.",
+    "data": "Référentiel des titres, OHLC quotidiens, résumés financiers, indicateurs de valorisation, dates d'annonce et calendriers selon le tableau actuel du plan Free.",
+    "history": "Deux ans de données avec un retard de 12 semaines. Les données les plus récentes ne sont pas incluses dans le plan gratuit.",
+    "quota": "5 appels par minute pour Free. Téléchargement CSV non inclus dans Free.",
+    "automation": "API v2 officielle documentée, exemples Python/curl et outils officiels disponibles. Utilisable pour une recherche personnelle retardée, avec cache et cadence limitée.",
+    "limitations": "États financiers BS/PL/CF complets et données détaillées de dividendes exclus du plan Free. Pas de cours du jour. Conditions destinées aux investisseurs individuels : redistribution des données et fourniture continue d'analyses à des tiers interdites selon la FAQ. EDINET complète les comptes récents.",
+    "priority": "B",
+    "evidence_status": "needs_account_validation",
+    "urls": [
+      "https://jpx-jquants.com/en",
+      "https://www.jpx.co.jp/corporate/news/news-releases/6020/20260119.html"
+    ]
+  },
+  {
+    "source": "Corée du Sud — FSS OpenDART",
+    "category": "Fondamentaux structurés et déclarations",
+    "geography": "KOSPI, KOSDAQ et déclarants coréens couverts ; autres sociétés selon les jeux",
+    "free_access": "Conditions officielles : service gratuit en principe. Accessible aux particuliers, entreprises et institutions après demande d'une clé.",
+    "auth": "Compte et clé crtfc_key de 40 caractères ; demande individuelle ou d'entreprise. Aucun compte créé/testé ici.",
+    "data": "États complets BS/IS/CIS/CF/SCE, comptes consolidés CFS ou individuels OFS, rapports annuels et intermédiaires ; JSON/XML, XBRL original ZIP, dépôts et plusieurs informations actionnariat/dividendes/rachats.",
+    "history": "Endpoint des états complets : exercices depuis 2015. Les autres familles de dépôts peuvent avoir une autre profondeur.",
+    "quota": "Documentation d'erreur : limite usuellement atteinte à 20 000 requêtes, seuil configurable ; période de remise à zéro non confirmée dans la documentation consultée. Certaines requêtes multi-sociétés limitées à 100 sociétés.",
+    "automation": "REST officiel notamment /engapi/fnlttSinglAcntAll.json avec corp_code, bsns_year, reprt_code et fs_div ; endpoint XBRL original et produits de téléchargement en volume.",
+    "limitations": "Originaux essentiellement coréens malgré portail anglais. Comptes personnalisés non standard possibles ; distinguer trimestre isolé et cumul annuel, CFS/OFS, monnaies et corrections. L'autorité ne garantit pas l'exactitude des chiffres déposés ; quotas/conditions peuvent changer.",
+    "priority": "A",
+    "evidence_status": "needs_account_validation",
+    "urls": [
+      "https://engopendart.fss.or.kr/intro/main.do",
+      "https://engopendart.fss.or.kr/intro/terms.do",
+      "https://engopendart.fss.or.kr/guide/detail.do?apiGrpCd=DE003&apiId=AE00036",
+      "https://engopendart.fss.or.kr/guide/detail.do?apiGrpCd=DE003&apiId=AE00035",
+      "https://engopendart.fss.or.kr/uss/umt/EgovMberInsertView.do"
+    ]
+  },
+  {
+    "source": "Taïwan — TWSE OpenAPI / données MOPS",
+    "category": "Référentiel, résultats, bilans et revenus mensuels",
+    "geography": "Sociétés cotées TWSE et certaines sociétés publiantes ; périmètre de chaque endpoint à distinguer",
+    "free_access": "Jeux officiels publiés comme gratuits sur data.gov.tw, sous Government Data Open Licence v1 pour les jeux vérifiés.",
+    "auth": "Aucune authentification déclarée dans le Swagger officiel ; un endpoint financier effectivement téléchargé sans clé.",
+    "data": "Référentiel sociétés, revenus mensuels, comptes de résultat et bilans par type d'industrie, dividendes et autres disclosures. API JSON et fichiers CSV officiels ; rapports complets distincts sur MOPS.",
+    "history": "Aucun paramètre date/période dans les endpoints fondamentaux examinés. Test du compte de résultat : 1 049 lignes, toutes pour année locale 115 / trimestre 2 (2026 T2), pas une série historique. Archiver les instantanés ; historiques autorisés à examiner séparément.",
+    "quota": "Aucun plafond chiffré vérifié dans Swagger. Spécification consultée : 143 routes. Actualisation selon le jeu, notamment mensuelle pour chiffre d'affaires et trimestrielle pour comptes.",
+    "automation": "API officielle, notamment /opendata/t187ap03_L, t187ap05_L, t187ap06_L_ci, t187ap07_L_ci et t187ap45_L. Test t187ap06_L_ci : HTTP 200 sans clé, 1 418 112 octets et 1 049 lignes JSON ; détail dans regulators_tests.json.",
+    "limitations": "Champs en chinois traditionnel ; calendriers/années locaux, unités et périmètre consolidé à décoder. Aucun flux de trésorerie complet ni historique intégral gratuit vérifié ici. Ne pas confondre snapshots open data avec les paquets historiques payants vendus par TWSE.",
+    "priority": "B",
+    "evidence_status": "live_tested",
+    "urls": [
+      "https://openapi.twse.com.tw/",
+      "https://openapi.twse.com.tw/v1/swagger.json",
+      "https://data.gov.tw/dataset/94831",
+      "https://data.gov.tw/dataset/92001",
+      "https://eshop.twse.com.tw/en/mops/detail/000000007af53455017af57d815f000f"
+    ]
+  },
+  {
+    "source": "Brésil — CVM Dados Abertos DFP et ITR",
+    "category": "États financiers annuels et trimestriels en volume",
+    "geography": "Companhias abertas déclarantes au Brésil",
+    "free_access": "Portail officiel de données ouvertes, fichiers téléchargeables sans paiement ; licence Open Data Commons Open Database License (ODbL) indiquée sur les jeux.",
+    "auth": "Aucune clé ni inscription pour les répertoires et fichiers publics annoncés.",
+    "data": "Bilan actif/passif, résultat, résultat global, cash-flow direct/indirect, variations capitaux propres, valeur ajoutée, composition du capital et métadonnées. ZIP de CSV avec comptes standard et personnalisés, versions consolidées/sociales selon les fichiers.",
+    "history": "DFP annuel depuis 2010 ; ITR trimestriel depuis 2011. Jeux des cinq dernières années mis à jour chaque semaine, y compris nouveaux dépôts et corrections ; archives historiques séparées.",
+    "quota": "Téléchargement de fichiers bulk prévu ; aucun nombre d'appels garanti vérifié. Mettre en cache les ZIP et limiter les téléchargements aux mises à jour.",
+    "automation": "Répertoires HTTP publics et ZIP annuels officiellement liés depuis le catalogue, avec dictionnaires de données. Traitement autonome des CSV adapté à un univers national complet.",
+    "limitations": "Portugais, codes locaux CNPJ/CVM, séparateurs/encodages à traiter ; tenir compte des devises/échelles, consolidation, exercices et versions. ODbL impose des obligations à examiner pour redistribution d'une base dérivée. Pas de cours de bourse dans ces jeux.",
+    "priority": "A",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://dados.cvm.gov.br/dataset/cia_aberta-doc-dfp",
+      "https://dados.cvm.gov.br/dataset/cia_aberta-doc-itr",
+      "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/"
+    ]
+  },
+  {
+    "source": "Suisse — rapports officiels des émetteurs / exigences SIX",
+    "category": "Rapports annuels/intermédiaires et tableaux investisseurs",
+    "geography": "Émetteurs suisses, via leurs sites de relations investisseurs",
+    "free_access": "Rapports publiés gratuitement sur les sites des sociétés. Exemple officiel Nestlé : états financiers PDF et certains tableaux Excel.",
+    "auth": "Aucun compte pour les publications publiques vérifiées ; absence de clé commune car sources propres à chaque émetteur.",
+    "data": "États consolidés, notes, stratégie, segments, dividendes, nombre d'actions et gouvernance ; parfois compte de résultat, bilan et cash-flow XLSX. Le guide SIX prévoit rapports annuels/intermédiaires sur le site de l'émetteur.",
+    "history": "Selon archives de chaque société ; Nestlé dispose d'archives multiexercices. Ne pas généraliser un nombre d'années à tous les émetteurs.",
+    "quota": "Pas d'API ni de quota communs vérifiés. Cadence faible après nouvelles publications et respect des conditions de chaque site.",
+    "automation": "Téléchargement de documents publics ; automatisation émetteur par émetteur à construire seulement lorsque les modalités du site le permettent. Aucune API gratuite universelle de fondamentaux SIX démontrée.",
+    "limitations": "PDF hétérogènes, XLSX non généralisés, IFRS/Swiss GAAP FER/autres normes, langues variables. Maintenance par émetteur et validation de l'extraction nécessaires. Les statistiques SNB sont surtout macro/bancaires agrégées, pas un remplacement des comptes de chaque société.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://handbooks.six-group.com/en/investor-relations/ir-massnahmen/website",
+      "https://www.ser-ag.com/en/projects/reports-extensions.html",
+      "https://www.nestle.com/investors/publications",
+      "https://www.nestle.com/investors/annual-report",
+      "https://www.nestle.com/sites/default/files/2026-02/annual-review-2025-en.pdf"
+    ]
+  },
+  {
+    "source": "Canada — SEDAR+",
+    "category": "Rapports officiels consultables, collecte automatisée restreinte",
+    "geography": "Déclarants aux autorités canadiennes en valeurs mobilières",
+    "free_access": "Le public peut rechercher et consulter les ressources publiques sans compte. Cette consultation n'accorde pas une licence gratuite de constitution de base automatisée.",
+    "auth": "Sans compte pour les ressources publiques indiquées ; comptes de déposants distincts.",
+    "data": "États financiers, rapports de gestion, notices annuelles et autres documents réglementés, majoritairement PDF ; profils et dates de dépôt.",
+    "history": "SEDAR+ et archive des documents antérieurs à son lancement ; profondeur à vérifier pour chaque émetteur/type.",
+    "quota": "Pas de quota d'API gratuite de collecte vérifié ; aucune API publique de fondamentaux identifiée.",
+    "automation": "Ne pas brancher un scraper sur cette base : conditions officielles interdisant la construction d'une base de données et l'extraction de plusieurs informations par moyens automatisés sans permission. Usage limité de consultation/vérification ; examiner plutôt l'IR des sociétés ou leurs dépôts SEC lorsqu'ils existent.",
+    "limitations": "Restriction vérifiée dans les conditions actuelles, pas simple difficulté technique. Documents sous responsabilité de l'émetteur, omissions/corrections et délais possibles ; fichiers anglais/français. Une page lisible ne constitue pas une API ouverte.",
+    "priority": "C",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://systems.securities-administrators.ca/onlinehelp/general-help/getting-started/general-public-access/",
+      "https://systems.securities-administrators.ca/terms-of-use/",
+      "https://sedarplus.ca/home/"
+    ]
+  },
+  {
+    "source": "Hong Kong — HKEXnews",
+    "category": "Rapports officiels consultables, collecte automatisée restreinte",
+    "geography": "Émetteurs cotés à Hong Kong, dont entreprises de Chine continentale",
+    "free_access": "Recherche et consultation publiques de rapports et annonces. Aucun flux gratuit de fondamentaux normalisés sous licence d'automatisation confirmé.",
+    "auth": "Consultation publique des documents ; aucune clé d'API gratuite de fondamentaux identifiée.",
+    "data": "Rapports annuels/intermédiaires, résultats, annonces, transactions sur actions et autres disclosures ; documents PDF principalement, métadonnées d'émetteur/date.",
+    "history": "Archives par émetteur/type de document ; profondeur et complétude non établies uniformément dans cette recherche.",
+    "quota": "Pas de quota de collecte gratuite vérifié ; les conditions interdisent l'accès programmatique sans permission.",
+    "automation": "Conditions HKEX/HKEXnews : accès par programmes/scripts, extraction systématique, scraping et text/data mining restreints sans accord exprès. Utiliser les rapports pour une revue ponctuelle, ou une autre source autorisée comme l'IR/SEC lorsque disponible.",
+    "limitations": "Ne pas qualifier les endpoints du site d'API gratuite officiellement autorisée. Bilinguisme chinois/anglais variable ; IFRS/HKFRS et autres conventions selon rapport ; extraction PDF et validation nécessaires.",
+    "priority": "C",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.hkexnews.hk/",
+      "https://www1.hkexnews.hk/search/titlesearch.xhtml",
+      "https://www2.hkexnews.hk/Global/Exchange/Terms-of-Use?sc_lang=en",
+      "https://www.hkex.com.hk/global/exchange/terms-of-use?sc_lang=en"
+    ]
+  },
+  {
+    "source": "Inde — publications NSE / BSE",
+    "category": "Résultats et rapports publics, automatisation non ouverte établie",
+    "geography": "Émetteurs cotés sur NSE/BSE en Inde",
+    "free_access": "Résultats et rapports publiquement consultables, dont résultats/XBRL sur BSE. Aucune API publique gratuite de fondamentaux autorisant la collecte systématique démontrée ici.",
+    "auth": "Selon la page/service ; aucune clé gratuite de collecte fondamentale officielle vérifiée.",
+    "data": "Résultats trimestriels/annuels, version standalone/consolidated, XBRL et rapports PDF, horodatage de dépôt et révisions.",
+    "history": "Historique selon émetteur et rubrique ; aucune durée uniforme vérifiée. Ne pas présenter une profondeur issue d'un outil tiers comme garantie des bourses.",
+    "quota": "Aucun quota d'API fondamentale libre confirmé. NSE interdit la collecte systématique ou automatisée dans les conditions de son site.",
+    "automation": "NSE : scraper non retenu à cause de la clause explicite. BSE : pages financières vérifiées mais droit/route d'extraction automatisée non établis ; ne pas lui attribuer automatiquement les conditions NSE. Rechercher les publications IR des sociétés pour une voie autorisée.",
+    "limitations": "Pages consultables ne valent ni API stable ni licence de redistribution. Distinguer chiffres standalone/consolidated, monnaie/échelle et changements d'exercice ; les crores/lakhs demandent conversion explicite.",
+    "priority": "C",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.nseindia.com/static/nse-terms-of-use",
+      "https://www.bseindia.com/corporates/Comp_Results.aspx?Code=542655",
+      "https://www.bseindia.com/markets/MarketInfo/DownloadAttach.aspx?attachedId=b31c397f-ad57-44d7-a9f4-1d52f0819e7e&id=20230630-12"
+    ]
+  },
+  {
+    "source": "Allemagne — Unternehmensregister / Bundesanzeiger",
+    "category": "Rapports financiers publiés et registre, accès gratuit partiel",
+    "geography": "Entreprises allemandes et déclarants concernés",
+    "free_access": "Recherche et consultation des publications, annonces et informations de registre gratuites selon le tarif officiel. Les bilans de micro-entreprises seulement déposés, non publiés, restent payants et sont exclus de la voie gratuite.",
+    "auth": "Recherche/consultation ordinaires généralement sans inscription ; compte requis pour les documents déposés payants et certaines autres prestations.",
+    "data": "Rapports financiers/comptes publiés et informations de registre ; format selon document, ESEF/iXBRL pour émetteurs concernés. Les extraits de registre XML ne sont pas des comptes financiers normalisés.",
+    "history": "Exercices ouverts après le 31 décembre 2021 transmis à l'Unternehmensregister ; exercices antérieurs au Bundesanzeiger. Profondeur disponible variable selon entité.",
+    "quota": "Pas de quota ou API publique gratuite de collecte de rapports vérifié.",
+    "automation": "Consultation et copie de certains documents officiellement prévues ; aucune route ouverte équivalente à EDGAR/filings.xbrl.org démontrée. Les interfaces de dépôt XML/XBRL ne prouvent pas une API publique de lecture.",
+    "limitations": "Complément important car filings.xbrl.org ne couvre pas l'Allemagne de manière fiable. Ne pas présenter tout le registre comme gratuit ni une consultation web comme permission de collecte massive ; en pratique, rapports IR des groupes à examiner pour une intégration autonome.",
+    "priority": "C",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.unternehmensregister.de/de/so-gehts/kosten?language=de",
+      "https://www.bundesanzeiger.de/pub/D088.pdf",
+      "https://www.bundesanzeiger.de/pub/de/suche-rechnungslegung",
+      "https://unternehmensregister.de/de/so-gehts/uebermitteln?dest=ureg&language=de"
+    ]
+  }
+]

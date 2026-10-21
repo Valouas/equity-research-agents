@@ -1,0 +1,2 @@
+# Uniquement pour régénérer le catalogue de recherche, pas pour exécuter le bot.
+openpyxl>=3.1,<4

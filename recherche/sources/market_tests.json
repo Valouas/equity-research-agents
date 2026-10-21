@@ -1,0 +1,44 @@
+[
+  {
+    "source": "Alpha Vantage",
+    "test_type": "public_documented_demo_api",
+    "url": "https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol=IBM&apikey=demo",
+    "date_utc": "2026-10-06",
+    "exact_time_utc": null,
+    "http_status": null,
+    "http_status_note": "Le navigateur de recherche n'a pas exposé le code HTTP. Ne pas assimiler une réponse JSON à un succès de données.",
+    "response_type": "application/json",
+    "usable_market_data": false,
+    "result": "Objet Information seulement : l'exemple demo demande d'obtenir une clé API gratuite. Aucun état financier, exercice ou montant reçu.",
+    "method": "Ouverture unique de l'exemple public IBM de la documentation officielle ; aucune clé personnelle et aucun compte créés.",
+    "scope_limit": "Teste uniquement ce lien de démonstration. Ne démontre ni un échec ni un succès avec une véritable clé gratuite."
+  },
+  {
+    "source": "Stooq",
+    "test_type": "public_download_page_access",
+    "url": "https://stooq.com/db/h/",
+    "date_utc": "2026-10-06",
+    "exact_time_utc": null,
+    "http_status": null,
+    "http_status_note": "Code HTTP non exposé par le navigateur de recherche.",
+    "response_type": "text/html",
+    "usable_market_data": false,
+    "result": "Page demandant d'activer JavaScript pour vérifier le navigateur. Aucune archive de prix téléchargée.",
+    "method": "Ouverture de la page publique de téléchargements historiques ; aucune tentative de contournement de la vérification.",
+    "scope_limit": "Test d'accès à une page, pas test d'une API ou d'un export CSV. L'observation ne prouve pas que les téléchargements sont impossibles avec un navigateur ordinaire."
+  },
+  {
+    "source": "Stooq",
+    "test_type": "public_historical_ticker_page_access",
+    "url": "https://stooq.com/q/d/?s=aapl.us",
+    "date_utc": "2026-10-06",
+    "exact_time_utc": null,
+    "http_status": null,
+    "http_status_note": "Code HTTP non exposé par le navigateur de recherche.",
+    "response_type": "text/html",
+    "usable_market_data": false,
+    "result": "Vérification JavaScript du navigateur ; aucune série Apple reçue.",
+    "method": "Ouverture de la page publique d'historique d'un ticker ; aucun endpoint CSV distinct appelé.",
+    "scope_limit": "Pas de validation de profondeur historique, d'ajustement des prix, de devise ou de cadence d'automatisation."
+  }
+]

@@ -1,0 +1,38 @@
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Runtime data and reports; examples are intentionally versioned
+/data/
+/reports/
+*.sqlite*
+*.db
+*.log
+/recherche/regeneration/
+/recherche/Catalogue_donnees_boursieres_gratuites.xlsx
+/recherche/sources/sec_companyfacts_*.json
+/recherche/sources/sec_submissions_*.json
+/recherche/sources/nasdaq_symbols.txt
+/recherche/sources/ecb_usd_chf.txt
+/recherche/sources/nestle_income_statement_*.xlsx
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,199 @@
+[
+  {
+    "source": "SEC EDGAR — comptes, dépôts et XBRL publics",
+    "category": "Fondamentaux et documents réglementaires",
+    "geography": "Émetteurs déclarants à la SEC, américains et étrangers ; couverture internationale partielle",
+    "free_access": "Accès public gratuit aux JSON companyfacts, companyconcept, frames et submissions ; archives ZIP quotidiennes disponibles. Aucune facture d'API ni clé nécessaire pour ces interfaces publiques.",
+    "auth": "Aucune clé. Déclarer un User-Agent identifiant honnêtement le programme et, en production, un vrai contact fourni par l'utilisateur. Test effectué avec un identifiant transparent sans adresse inventée.",
+    "data": "Bilans, résultats, flux de trésorerie, actions, EPS, certains dividendes ; dépôts 10-K, 10-Q, 8-K, 20-F, 40-F, 6-K ; identifiants CIK, tickers et métadonnées des dépôts. Les documents complets permettent de traiter les tags personnalisés et notes absents de companyfacts.",
+    "history": "EDGAR remonte à 1994/1995 ; XBRL requis à partir de 2009, profondeur variable par émetteur. Submissions contient au moins un an ou 1 000 dépôts récents, avec fichiers supplémentaires pour l'historique. ZIP bulk recompilés chaque nuit vers 03:00 ET.",
+    "quota": "Maximum officiel 10 requêtes/seconde ; conception proposée à 1–2 requêtes/seconde avec cache et arrêt sur refus. Les archives bulk sont la voie recommandée pour les volumes importants.",
+    "automation": "Priorité A : univers CIK/ticker, ingestion companyfacts par émetteur, mises à jour guidées par submissions. Conserver taxonomy/tag/unit/start/end/accn/filed et acceptanceDateTime du dépôt, puis séparer date de période, date de publication et date de collecte.",
+    "limitations": "Ne couvre pas toutes les actions mondiales et ne fournit pas les cours actuels. Companyfacts/frames ne retiennent que des taxonomies standard et des faits applicables à l'entité entière : dimensions, classes et extensions peuvent manquer. fy n'identifie pas à lui seul l'exercice économique. DEI EntityCommonStockSharesOutstanding correspond à la date déclarée en couverture ; vraie fin d'exercice : CommonStockSharesOutstanding au bon end et à la bonne classe. Moyenne diluée distincte. Absence de tag dividende ≠ zéro ; PaymentsOfDividends englobe aussi préférentielles/intérêts minoritaires. Données amendables : préserver les versions pour les analyses historiques.",
+    "priority": "A",
+    "evidence_status": "live_tested",
+    "urls": [
+      "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data",
+      "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "https://data.sec.gov/submissions/CIK0000320193.json",
+      "https://www.sec.gov/files/company_tickers_exchange.json",
+      "https://www.sec.gov/Archives/edgar/daily-index/xbrl/companyfacts.zip",
+      "https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip"
+    ]
+  },
+  {
+    "source": "SEC EDGAR — Form 13F et transactions des dirigeants (Forms 3/4/5)",
+    "category": "Actionnariat et événements de gouvernance",
+    "geography": "Déclarants concernés par les obligations américaines ; participations 13F dans les titres admissibles, pas un portefeuille mondial complet",
+    "free_access": "Dépôts publics et jeux de données structurés ZIP gratuits, extraits des formulaires XML. Les téléchargements trimestriels complètent les dépôts individuels récents.",
+    "auth": "Aucune clé pour les fichiers publics ; même déclaration User-Agent et politique d'accès SEC.",
+    "data": "Positions institutionnelles 13F, type de titre, quantité, valeur et options déclarées ; détention et transactions de dirigeants, administrateurs et détenteurs concernés, codes d'opération, dérivés, propriété directe/indirecte et informations de plan 10b5-1 lorsqu'elles figurent au dépôt.",
+    "history": "Jeux Form 13F annoncés depuis juillet 2013 ; jeux Forms 3/4/5 depuis janvier 2006. Mises à jour trimestrielles des extractions ; dépôts individuels publiés séparément.",
+    "quota": "Politique SEC : maximum 10 requêtes/seconde tous téléchargements confondus ; préférer ZIP historiques et collecte incrémentale limitée.",
+    "automation": "Priorité B : produire des alertes de contexte et liens au dépôt, sans convertir automatiquement chaque achat déclaré en recommandation. Séparer date de transaction, fin de trimestre et date publique du dépôt ; distinguer achats/ventes de marché, attributions, exercices et retenues fiscales.",
+    "limitations": "13F est généralement dû jusqu'à 45 jours après la fin du trimestre et omet les positions courtes : ni portefeuille actuel ni exposition nette. Certaines positions sont confidentielles ou amendées. Form 4 doit généralement être déposé sous deux jours ouvrés, ce qui n'assure pas le respect effectif du délai. Les extractions SEC ne remplacent pas la lecture des formulaires et de leurs notes.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets",
+      "https://www.sec.gov/data-research/sec-markets-data/insider-transactions-data-sets",
+      "https://www.sec.gov/rules-regulations/staff-guidance/division-investment-management-frequently-asked-questions/frequently-asked-questions-about-form-13f",
+      "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-69"
+    ]
+  },
+  {
+    "source": "Nasdaq Trader — Symbol Directory",
+    "category": "Univers de titres et statut de cotation",
+    "geography": "Nasdaq et autres bourses américaines via fichiers distincts ; pas une liste mondiale",
+    "free_access": "Fichiers texte publics directement téléchargeables sans compte. Accès gratuit constaté ; aucune licence générale de redistribution commerciale n'a été validée dans cette recherche.",
+    "auth": "Aucune clé ni compte lors du test de nasdaqlisted.txt.",
+    "data": "Symboles, nom du titre, catégorie de marché, indicateur de test, ETF, statut financier/cotation et taille de lot. otherlisted.txt documente les autres bourses, ETF et symboles associés.",
+    "history": "Photographie courante mise à jour plusieurs fois par jour, avec ligne File Creation Time ; aucun historique complet de composition n'est fourni par ce fichier seul.",
+    "quota": "Aucun plafond numérique officiel identifié sur la page des définitions ; une récupération quotidienne de chaque fichier suffit au bot long terme.",
+    "automation": "Priorité A pour le volet américain : télécharger nasdaqlisted.txt et otherlisted.txt, enlever ligne finale et Test Issue=Y, traiter ETF=Y, puis vérifier le type exact du titre et rapprocher symboles/CIK/FIGI. Archiver les photographies pour suivre ajouts et retraits.",
+    "limitations": "Le répertoire n'est pas une liste d'actions ordinaires prête à utiliser : ETF, préférentielles, warrants, unités et autres instruments demandent un filtrage. Pas de cours, pas de fondamentaux, pas d'univers historique exempt de biais de survivance. Test : 5 636 lignes, dont 1 293 ETF et 8 titres de test ; ne pas annoncer 5 636 sociétés analysables.",
+    "priority": "A",
+    "evidence_status": "live_tested",
+    "urls": [
+      "https://www.nasdaqtrader.com/trader.aspx?id=symboldirdefs",
+      "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+      "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
+    ]
+  },
+  {
+    "source": "OpenFIGI",
+    "category": "Rapprochement d'identifiants de titres",
+    "geography": "Instruments internationaux ; correspondances dépendantes de l'instrument et du marché",
+    "free_access": "API publique gratuite ; FIGI et métadonnées proposées sous licence MIT selon la présentation officielle. Une clé gratuite augmente les limites.",
+    "auth": "Appels non authentifiés possibles. Compte et en-tête X-OPENFIGI-APIKEY pour les limites supérieures.",
+    "data": "Correspondances d'identifiants vers FIGI, compositeFIGI et shareClassFIGI ; ticker, place, nom, catégories de titre, filtres de marché/devise/MIC.",
+    "history": "Identifiants et métadonnées de référence ; inclut des instruments non cotés via option dédiée. Ce n'est pas un historique de cours ni de fondamentaux.",
+    "quota": "Mapping : 25 requêtes/minute sans clé, 25/6 secondes avec clé. Documentation contradictoire sur la taille sans clé : tableau général 10 jobs, section Mapping 5 ; retenir au plus 5 jusqu'à validation. Avec clé : 100 jobs/requête. Search/Filter : 5/min sans clé, 20/min avec clé ; plafond de 15 000 résultats, 100/page.",
+    "automation": "Priorité A : résoudre une seule fois les instruments, persister les mappings et leurs dates, appliquer marché/MIC/devise/classe pour écarter les correspondances ambiguës. Lire les en-têtes ratelimit et arrêter sur 429 avant reprise temporisée.",
+    "limitations": "Un ticker seul n'identifie pas un instrument mondialement. Plusieurs FIGI peuvent représenter différentes cotations/classes ; ne pas dédupliquer tous les titres uniquement par nom de société. Pas de catalogue exhaustif obtenu en une recherche puisque les résultats sont plafonnés. API documentée, pas testée dans les quatre probes réseau.",
+    "priority": "A",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.openfigi.com/",
+      "https://www.openfigi.com/api/documentation"
+    ]
+  },
+  {
+    "source": "GLEIF — LEI, Golden Copy et liens de propriété",
+    "category": "Identifiants d'entités et groupes",
+    "geography": "Entités disposant d'un LEI dans le monde ; toutes les sociétés ne disposent pas d'un LEI",
+    "free_access": "Données LEI gratuites et ouvertes sous CC0. Recherche publique et fichiers Golden Copy/delta ; fichiers disponibles en XML, CSV et JSON.",
+    "auth": "Accès public sans inscription pour la recherche et les fichiers ; API publique documentée.",
+    "data": "LEI, noms et adresses légales, statuts, dates de mise à jour, liens de parents directs/ultimes disponibles et mappings BIC/ISIN-LEI.",
+    "history": "Golden Copy contient les LEI historiques et actuels ; trois publications quotidiennes à 02:00, 10:00 et 18:00 UTC. Deltas depuis 8 heures, 24 heures, 7 jours et 31 jours.",
+    "quota": "Aucun plafond chiffré de l'API confirmé dans les pages officielles consultées ; ne pas qualifier l'API d'illimitée. Pour couvrir largement, utiliser Golden Copy puis deltas plutôt qu'un appel par entité.",
+    "automation": "Priorité B : rapprocher identité de l'émetteur, LEI, pays et groupe ; conserver séparément l'entité juridique et l'instrument coté. Ingestion mensuelle complète puis deltas selon besoin.",
+    "limitations": "LEI identifie une entité, pas une classe d'action. Les relations ne constituent pas une base exhaustive d'actionnaires ; exceptions et liens manquants existent. Pas de comptes ni de cours. Vérifier statut et date de renouvellement avant usage.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://www.gleif.org/en/lei-data/gleif-api/",
+      "https://www.gleif.org/en/lei-data/access-and-use-lei-data",
+      "https://www.gleif.org/en/lei-data/gleif-golden-copy",
+      "https://www.gleif.org/fr/about/open-data/",
+      "https://documenter.getpostman.com/view/7679680/SVYrrxuU"
+    ]
+  },
+  {
+    "source": "FRED / ALFRED — Federal Reserve Bank of St. Louis",
+    "category": "Macroéconomie, taux et versions historiques",
+    "geography": "États-Unis et séries internationales selon les fournisseurs d'origine",
+    "free_access": "Séries publiques et API gratuite avec clé. Les données de tiers conservent leurs droits propres : une série disponible dans FRED n'est pas automatiquement libre de redistribution commerciale.",
+    "auth": "Compte FRED et clé personnelle requis pour tous les appels API. Chaque utilisateur d'une application doit utiliser sa propre clé selon les instructions officielles.",
+    "data": "Taux d'intérêt, courbes de taux, inflation, emploi, activité et autres séries macro ; métadonnées, unités, fréquences, sources et dates de révision. ALFRED permet de retrouver les valeurs connues à une date passée.",
+    "history": "Variable par série, souvent plusieurs décennies. Les paramètres realtime_start/realtime_end contrôlent les versions connues à l'époque ; les requêtes sans ces paramètres utilisent par défaut les connaissances actuelles.",
+    "quota": "Jusqu'à 120 requêtes/minute selon la page officielle des erreurs ; 429 au-delà et blocage temporaire possible si absence de temporisation.",
+    "automation": "Priorité B : liste courte de séries macro, mise à jour quotidienne ou au calendrier de publication ; sauvegarder métadonnées et vintages, utiliser ALFRED pour les simulations historiques. Conserver l'avis d'attribution/non-approbation demandé par FRED.",
+    "limitations": "Pas de comptes d'entreprises ni de cours mondiaux. Ne pas confondre observation_period et date de disponibilité. Droits de tiers à vérifier série par série. Accès API non testé faute de clé utilisateur ; aucune inscription créée.",
+    "priority": "B",
+    "evidence_status": "needs_account_validation",
+    "urls": [
+      "https://fred.stlouisfed.org/docs/api/api_key.html",
+      "https://fred.stlouisfed.org/docs/api/fred/errors.html",
+      "https://fred.stlouisfed.org/docs/api/fred/realtime_period.html",
+      "https://fred.stlouisfed.org/docs/api/terms_of_use.html"
+    ]
+  },
+  {
+    "source": "Banque centrale européenne — ECB Data Portal / SDMX",
+    "category": "Changes et taux de référence",
+    "geography": "Zone euro et devises de référence, notamment USD et CHF",
+    "free_access": "API publique de données statistiques, CSV et SDMX. Réutilisation gratuite avec attribution BCE, fidélité des données et indication des transformations ; conditions supplémentaires en cas de vente de documents contenant ces données.",
+    "auth": "Aucune clé ni compte lors du test CSV de quatre observations USD/CHF.",
+    "data": "Taux de change de référence, taux et statistiques monétaires. Paramètres de série, plage de dates, dernières observations et mises à jour/révisions.",
+    "history": "Variable par série. La documentation fournit startPeriod/endPeriod, lastNObservations et updatedAfter ; stocker aussi les versions récupérées pour les révisions.",
+    "quota": "Aucun plafond numérique identifié dans les pages API consultées ; restreindre la requête aux séries/périodes utiles, mettre en cache et temporiser les erreurs.",
+    "automation": "Priorité A comme conversion de devises de référence : récupérer en un appel USD/EUR et CHF/EUR pour une même date, puis calculer USD/CHF en documentant le croisement. Pour les comptes de résultat, utiliser des moyennes cohérentes avec la période ; conserver les montants d'origine.",
+    "limitations": "Cours de référence, pas prix d'exécution ni cotations d'actions. Éviter une inversion de l'unité : EXR.D.CHF.EUR signifie CHF pour 1 EUR. Les données macro changent selon calendrier de publication ; une absence de jour férié n'est pas un zéro.",
+    "priority": "A",
+    "evidence_status": "live_tested",
+    "urls": [
+      "https://data.ecb.europa.eu/help/api/data-examples",
+      "https://data-api.ecb.europa.eu/service/data/EXR/D.USD+CHF.EUR.SP00.A?lastNObservations=2&format=csvdata",
+      "https://www.ecb.europa.eu/services/using-our-site/disclaimer/html/index.en.html"
+    ]
+  },
+  {
+    "source": "Banque mondiale — Indicators API v2",
+    "category": "Contexte économique des pays",
+    "geography": "Pays, territoires et agrégats internationaux",
+    "free_access": "API de données publique gratuite, sans clé ; jeux sous CC BY 4.0 sauf mention différente, avec conditions additionnelles des Dataset Terms et droits éventuels de tiers.",
+    "auth": "Aucune clé ni autre authentification nécessaire selon la documentation officielle.",
+    "data": "PIB, croissance, inflation, population, dette et autres indicateurs de pays ; métadonnées, codes, fréquences et notes. Près de 16 000 séries et plus de 45 bases annoncées sur la documentation.",
+    "history": "Plus de 50 ans pour de nombreuses séries, couverture dépendante du pays et de l'indicateur. Beaucoup de séries sont annuelles et publiées avec retard.",
+    "quota": "Pas de plafond global chiffré trouvé dans la documentation consultée ; pagination par défaut 50 résultats, per_page configurable ; jusqu'à 60 indicateurs d'une même source par requête, URL totale limitée à 4 000 caractères.",
+    "automation": "Priorité B : collecter quelques indicateurs pertinents par pays en lots, avec format=json, plage de dates et métadonnées. Mise à jour mensuelle ou après publication ; ne pas répéter ce téléchargement pour chaque action.",
+    "limitations": "Décrit un pays, pas les revenus internationaux d'une entreprise ni ses comptes. Valeurs nulles et révisions fréquentes : conserver les dates et éviter tout remplissage futur implicite. API documentée mais non incluse dans les quatre probes.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation",
+      "https://datahelpdesk.worldbank.org/knowledgebase/articles/898581-api-basic-call-structures",
+      "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets"
+    ]
+  },
+  {
+    "source": "Banque nationale suisse — Portail de données",
+    "category": "Macro suisse, CHF et taux",
+    "geography": "Suisse et séries de change pertinentes pour le CHF",
+    "free_access": "Consultation et téléchargement publics. La FAQ autorise la sauvegarde, transmission et réutilisation appropriée à des fins non commerciales, avec attribution ; ne pas présumer une autorisation commerciale générale.",
+    "auth": "Liens API copiables dans le panneau de téléchargement de chaque tableau/graphique ; aucune inscription requise indiquée dans les instructions consultées.",
+    "data": "Taux directeurs, rendements obligataires, devises, agrégats monétaires, données bancaires et autres statistiques suisses. Métadonnées, ruptures de série et notes selon le tableau.",
+    "history": "Varie selon la série ; calendrier de publication et dernières mises à jour disponibles. Les données complémentaires sont plus détaillées mais peuvent omettre les notes des tableaux préparés.",
+    "quota": "Aucun quota numérique confirmé sur les pages officielles consultées ; suivre les liens API fournis par le portail, mettre en cache et actualiser au rythme de publication.",
+    "automation": "Priorité B pour contextualiser un investisseur suisse et corroborer taux/CHF. Récupérer des liens API documentés par tableau, conserver les unités et distinguer valeur de fin de période et moyenne mensuelle.",
+    "limitations": "Pas de fondamentaux d'entreprises ni de cours mondiaux d'actions. La licence présentée porte sur l'usage non commercial. Endpoints de données non testés ici ; les pages du portail reposent partiellement sur JavaScript.",
+    "priority": "B",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://data.snb.ch/en",
+      "https://data.snb.ch/en/topics/texts/doc/introduction",
+      "https://data.snb.ch/fr/topics/snb/cube/snboffzisa"
+    ]
+  },
+  {
+    "source": "GDELT — métadonnées d'actualité et événements",
+    "category": "Veille et contexte médiatique facultatifs",
+    "geography": "Couverture médiatique internationale multilingue, inégale selon pays et sources",
+    "free_access": "Bases GDELT annoncées comme gratuites et ouvertes ; fichiers bruts et APIs publiques. Les textes d'articles liés appartiennent à leurs éditeurs ; l'accès GDELT ne constitue pas une licence de reproduction des articles. Les calculs BigQuery peuvent avoir un coût propre.",
+    "auth": "API DOC publique sans clé présentée dans les exemples officiels ; authentification et facturation séparées si BigQuery est utilisé.",
+    "data": "Titres et URLs, sources, dates de détection, organisations, thèmes, tonalité et événements extraits automatiquement. RSS ou API utilisables comme détecteurs de sujets à examiner.",
+    "history": "Archives Events remontant à 1979 ; produits DOC/GKG et fenêtres de recherche distincts. Les annonces DOC donnent des horizons différents selon version : vérifier le périmètre actuel avant de promettre un historique intégral via DOC. Bases 2.0 actualisées par lots de 15 minutes.",
+    "quota": "Aucun plafond de requêtes stable confirmé dans les pages officielles consultées ; limiter la veille, fractionner les fenêtres et gérer 429. Ne pas télécharger toutes les archives pour une simple liste d'actions à surveiller.",
+    "automation": "Priorité C : veille quotidienne d'une sélection déjà filtrée ; rattacher les articles avec plusieurs identifiants/alias et conserver le lien source. Utiliser les communiqués et dépôts réglementaires pour confirmer les faits matériels.",
+    "limitations": "Homonymes, doublons, biais de couverture, erreurs de traduction et de tonalité. Volume ou sentiment de presse ne démontre ni qualité financière ni rendement futur. Complément optionnel, pas une donnée de valorisation. API non testée dans les quatre probes.",
+    "priority": "C",
+    "evidence_status": "documentation_verified",
+    "urls": [
+      "https://gdeltproject.org/data.html",
+      "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/",
+      "https://blog.gdeltproject.org/doc-geo-2-0-api-updates-full-year-searching-and-more/"
+    ]
+  }
+]
